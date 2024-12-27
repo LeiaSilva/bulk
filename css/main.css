@@ -87,6 +87,14 @@
   bottom: 2rem;
 }
 
+.loginForm button a {
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  top: 2px;
+  left: 4.5px;
+}
+
 .loginForm a {
   display: block;
   margin: 1rem auto;
