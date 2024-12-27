@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /*-------------GLOBALES-------------------*/
-html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  * {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 /*---Particiones---*/
 @import "./loginForm"

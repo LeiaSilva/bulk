@@ -1,144 +1,80 @@
-/*--Trabajo resolucion de 320 x 768 LOGIN--*/
-.sesionContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 47rem;
-    width: 100%;
-}
-.formContainer{
-    position: relative;
-    display: flex;
-    background-color: brown;
-    margin: 1rem;
+.loginContainer{
+    background-color: rgb(151, 27, 27);
     width: 90%;
-    max-width: 400px;
+    max-width: 768px;
     min-width: 350px;
-    padding-bottom: 20rem;
-    padding-top: 20rem;
-    border-radius: 20px;
+    margin: 1.5rem;
+    margin-top: .1px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 30px;
 }
-.welcomeContainer{
-    position: relative;
-    width: 60%;
-    bottom: 15rem;
-    left: 5rem;
-}
-.welcomeContainer img{
+.loginForm{
     width: 100%;
+    display: block;
+    height:38rem;
+}
+.loginForm img{
+    margin: 1rem;
+    width: 42%;
     position: relative;
+    left: 6.5rem;
     border-radius: 150px;
-    max-width: 400px;
-
 }
-.emailContainer{
-    position: relative;
-    bottom: 7rem;
-    margin: 5px;
+.loginForm-container{
+    display: flex;
+    margin:1rem ;
+    padding-right: 10px;
+    flex-direction: column;
 }
-.emailContainer input {
-    display: block;
-    position: relative;
-    bottom: 1rem;
-    width: 330px;
-    left: 0.1rem;
-    margin: 0.5rem auto;
-    height: 42px;
-    padding-top: 5px 20px;
-    border: 3px solid transparent;
-    border-radius: 15px;
+.loginForm-container input{
+    width: 100%;
+    height: 2.3rem;
+    border-radius: 10px;
     font-size: 1rem;
 }
-.emailContainer input:focus{
+.loginForm-container input:focus{
     border: 3px solid rgb(24, 99, 240);
     outline: none;
     box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+
 }
-.emailContainer label{
-    position: absolute;
-    bottom: 5rem;
-    left: 2rem;
+.loginForm-container label{
     font-size: 1.7rem;
+    margin-bottom: 10px;
+    margin-left: 5px;
 }
-.loginValidacion{
-    position: absolute;
-    margin: 0;
-    font-size: 1.4rem;
-    left:20.8rem;
-    bottom: 1.8rem;
+.loginForm-container i{
+    position: relative;
     z-index: 100;
-    opacity:0;
-}
-
-.passwordContainer{
-    position: relative;
     bottom: 2rem;
-    margin: 5px;
+    left: 20.4rem;
+    opacity: 0;
+    font-size: 22px;
 }
-.passwordContainer input{
-    display: block;
-    position: relative;
-    bottom: 1rem;
-    width: 330px;
-    left: 0.1rem;
-    margin: 0.5rem auto;
-    height: 42px;
-    padding-top: 5px 20px;
-    border: 3px solid transparent;
-    border-radius: 15px;
-    font-size: 1rem;
-    transition: .3s ease all;
-}
-.passwordContainer input:focus{
-    border: 3px solid rgb(24, 99, 240);
-    outline: none;
-    box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
-
-}
-.passwordContainer label{
-    position: absolute;
-    bottom: 5rem;
-    left: 2rem;
-    font-size: 1.7rem;
-}
-
 .loginAdv{
-    margin: 0;
-    font-size: 14px;
-    color: red;
-    position: absolute;
-    left: 3rem;
-    bottom: -0.5rem;
+    font-size: 1rem;
+    color: rgb(255, 0, 0);
+    position: relative;
+    bottom: 2.2rem;
+    left: 1rem;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.loginAdv-activo{
-    margin: 0;
-    font-size: 14px;
-    color: red;
-    position: absolute;
-    left: 3rem;
-    bottom: -0.5rem;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.formContainer button{
-    width: 65%;
+.loginForm button{
+    width: 60%;
     height: 60px;
     position: relative;
-    top: 0.5em;
-    left: 4.2rem;
-    border-style: dashed;
+    bottom: 3rem;
+    left: 5rem;
     border-radius: 15px;
     font-size: 17px;
 }
-.forgetContainer{
+.loginForm a{
     position: relative;
-    left: 9rem;
-    bottom: -3rem;
-    font-size: 15px;
+    top: 1rem;
+    right: 7rem;
+    color: black;
 }
 /*--Validacion login--*/
 .loginForm-correcto .loginValidacion{
@@ -155,4 +91,8 @@
 
 .loginForm-incorrecto input:focus {
     border: 3px solid red;
+}
+.loginAdv-activo{
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
