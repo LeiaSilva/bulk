@@ -2,27 +2,26 @@
     background-color: rgb(151, 27, 27);
     width: 90%;
     margin: 1.5rem auto;
-    margin-top: 9px;
+    margin-top: 5rem;
     border-radius: 30px;
 }
 .loginForm{
     width: 100%;
-    display: block;
-    height:auto;
+    display: flex;
+    flex-direction: column;
     overflow-y: hidden;
 }
-.loginForm img{
-    margin: 1rem auto;
-    width: 50%;
-    position: relative;
-    left: 6rem;
-    border-radius: 150px;
+.loginForm img {
+    width: 80%;      
+    max-width: 150px;
+    height: auto;     
+    margin: 1rem auto; 
+    border-radius: 100px;
 }
+
 .loginForm-container{
-    display: flex;
     margin:1rem ;
     padding-right: 10px;
-    flex-direction: column;
 }
 .loginForm-container input{
     width: 100%;
@@ -38,14 +37,12 @@
 }
 .loginForm-container label{
     font-size: 1.7rem;
-    margin-bottom: 10px;
-    margin-left: 5px;
 }
 .loginForm-container i{
     position: relative;
     z-index: 100;
     bottom: 2rem;
-    left: 18rem;
+    left: 92%;
     opacity: 0;
     font-size: 22px;
 }
@@ -59,14 +56,13 @@
     transition: opacity 0.3s ease;
 }
 .loginForm button{
-    width: 60%;
-    margin-bottom: 1rem;
-    height: 60px;
-    position: relative;
-    bottom: 1.5rem;
-    left: 5rem;
+    margin: 1rem auto; 
+    width: 70%; 
+    height: 50px;
     border-radius: 15px;
     font-size: 17px;
+    position: relative;
+    bottom: 2rem;
 }
 .loginForm a{
     display: block;
@@ -76,7 +72,7 @@
     text-align: center;
     position: relative;
     bottom: 2rem;
-    left: 1rem;
+    left: .5rem;
 }
 /*--Validacion login--*/
 .loginForm-correcto .loginValidacion{
