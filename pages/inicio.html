@@ -5,39 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
-        <nav>
-            <div>
-                <ion-icon name="person-outline"></ion-icon>
-            </div>
-            <img src="./assets/logoBulk.jpg" alt="loco compañia Bulk">
-            <div>
-                <ion-icon name="cart-outline"></ion-icon>
-            </div>
+        <nav class="navbar" id="navbar">
+            <!--Elemntos visuales-->
+                <ion-icon name="person-outline" id="perfil"></ion-icon>
+                <div class="navbarContainer-logo">
+                    <a href="./inicio.html"><img src="../assets/logoBulk.jpg" alt="logo compañia Bulk"></a>
+                </div>
+                <ion-icon name="cart-outline" id="carrito"></ion-icon>
         </nav>
-    </header>
-    <section></section>
-
-    <section>
-        <div>
-            <div>
-                <img src="" alt="">
-                <button>Agregar a carrito</button>
-            </div>
-            <div>
-                <h1>Nombre producto</h1>
-                <p>Color</p>
-                <h2>$200.000</h2>
-            </div>
-            <div>
-                <p>Stock:</p>
+        <div class="containerMenu" id="menu">
+            <ion-icon name="close-outline"></ion-icon>
+            <ul>
+                <li><a href="./inicio.html"> Inicio </a></li>
+                <li><a href="#">Mi perfil</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+            <div class="containerMenu-checkboxs">
+                <div>
+                    <input type="checkbox" name="checkbox">
+                    <label for="checkbox">Stock</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="checkbox">
+                    <label for="checkbox">Todo</label>
+                </div>
             </div>
         </div>
-    </section>
+    </header>
     
     
 
