@@ -162,9 +162,9 @@
 
 /*---Menu desplegable---*/
 .containerMenu {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.877);
   width: 50%;
-  height: 510px;
+  height: 722px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,17 +174,17 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  border-right: 3px solid rgba(0, 0, 0, 0.1);
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
 .containerMenu ion-icon {
   font-size: 1.4rem;
   position: relative;
-  left: 86%;
-  bottom: 0%;
+  left: 87%;
+  bottom: 2%;
 }
 .containerMenu ul {
   text-align: center;
-  height: 90%;
+  height: 80%;
 }
 .containerMenu ul li {
   border-bottom: 2px solid rgb(224, 41, 41);
