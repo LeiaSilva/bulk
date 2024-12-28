@@ -19,3 +19,42 @@
         margin: 20px;
     }
 }
+/*---Menu desplegable---*/
+.containerMenu{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+    ion-icon{
+        font-size: 1.4rem;
+        position: relative;
+        left: 86%;
+        bottom: 0%;
+    }
+    ul{
+        text-align: center;
+        height: 90%;
+        li{
+            border-bottom: 2px solid rgb(224, 41, 41);
+            font-size: 1.2rem;
+            margin: 20px;
+            padding-bottom: 20px;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+    .containerMenu-checkboxs{
+        display: flex;
+        justify-content: space-between;
+        div{
+            label{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
