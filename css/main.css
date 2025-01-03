@@ -169,7 +169,7 @@
 .containerMenu {
   background-color: rgba(255, 255, 255, 0.877);
   width: 50%;
-  height: 722px;
+  height: 980px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,8 +184,9 @@
 .containerMenu ion-icon {
   font-size: 1.4rem;
   position: relative;
-  left: 87%;
+  left: 95%;
   bottom: 2%;
+  cursor: pointer;
 }
 .containerMenu ul {
   text-align: center;
@@ -195,11 +196,25 @@
   border-bottom: 2px solid rgb(224, 41, 41);
   font-size: 1.2rem;
   margin: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
+  -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, -webkit-transform 0.3s ease;
 }
 .containerMenu ul li a {
   text-decoration: none;
   color: black;
+}
+.containerMenu ul li:hover {
+  background-color: rgb(224, 41, 41);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.containerMenu ul li:active {
+  background-color: rgb(224, 41, 41);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 .containerMenu .containerMenu-checkboxs {
   display: -webkit-box;
@@ -208,6 +223,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 1rem;
 }
 .containerMenu .containerMenu-checkboxs div label {
   font-size: 1.2rem;
