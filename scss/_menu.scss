@@ -32,7 +32,8 @@
     border-right: 2px solid rgba(0, 0, 0, 0.1);
     transform: translateX(-100%); /* Inicialmente oculto fuera de la pantalla */
     transition: transform 0.5s ease; /* Animación suave */
-    overflow: hidden 
+    overflow: hidden ;
+    
     ion-icon{
         font-size: 1.4rem;
         position: relative;
