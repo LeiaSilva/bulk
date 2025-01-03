@@ -20,14 +20,19 @@
     }
 }
 /*---Menu desplegable---*/
-.containerMenu{
+.containerMenu{ 
+    position: fixed;
     background-color: rgba(255, 255, 255, 0.877);
     width: 50%;
     height: 980px;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     border-right: 2px solid rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%); /* Inicialmente oculto fuera de la pantalla */
+    transition: transform 0.5s ease; /* Animación suave */
+    overflow: hidden 
     ion-icon{
         font-size: 1.4rem;
         position: relative;
@@ -69,4 +74,8 @@
             }
         }
     }
+} 
+/*-- Muestra el menu--*/
+.show{
+    transform: translateX(0);
 }

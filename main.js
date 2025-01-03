@@ -55,5 +55,3 @@ formulario.addEventListener('submit', (e) => {
 } )
 
 
-/*---menu--*/
-
