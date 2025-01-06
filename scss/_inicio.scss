@@ -1,0 +1,37 @@
+/*--ACTUALIZACION--*/
+section{
+    margin: 10px;
+    p{
+        width: 100%;
+        font-size: 12px;
+    }
+}
+/*--BUSCADOR--*/
+section{
+    .buscador{
+        display: flex;
+        width: 50%;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        margin: 0 25% ;
+        justify-content: space-between;
+        border-radius: 30px;
+        input{
+            font-size: 1rem;
+            width: 90%;
+            padding: 1px;
+            border: none;
+            &:focus{
+                border: none;
+                outline: none;
+            }
+        }
+        i{
+            font-size: 25px;
+            margin: 3%;
+        }
+        &:focus{
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}
