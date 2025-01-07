@@ -1,37 +1,89 @@
 /*--ACTUALIZACION--*/
-section{
+section {
     margin: 10px;
-    p{
+
+    p {
         width: 100%;
         font-size: 12px;
     }
 }
+
 /*--BUSCADOR--*/
-section{
-    .buscador{
+section {
+    .buscador {
         display: flex;
         width: 50%;
         background-color: rgb(255, 255, 255);
         border: 2px solid rgba(0, 0, 0, 0.1);
-        margin: 0 25% ;
+        margin: 0 25%;
         justify-content: space-between;
         border-radius: 30px;
-        input{
+
+        input {
             font-size: 1rem;
             width: 90%;
             padding: 1px;
             border: none;
-            &:focus{
+
+            &:focus {
                 border: none;
                 outline: none;
             }
         }
-        i{
+
+        i {
             font-size: 25px;
             margin: 3%;
         }
-        &:focus{
+
+        &:focus {
             border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+/*--BODY: CARDS PRODUCTOS--*/
+.card {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin-left: 1rem;
+    border: 3px solid rgb(0, 0, 0);
+
+    .cardImg {
+        width: 40%;
+        margin: .5rem 1rem;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: auto;
+        }
+    }
+
+    .cardContent {
+        /*display: flex;
+        flex-direction: column;
+        margin: 55px;
+        padding: 55px;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+        gap: 0.8rem;
+        width: 65%;
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+        p{
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
         }
     }
 }

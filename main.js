@@ -53,5 +53,3 @@ inputs.forEach((input)=> {
 formulario.addEventListener('submit', (e) => {
     e.preventDefault()
 } )
-
-
