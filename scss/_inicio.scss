@@ -44,46 +44,101 @@ section {
 
 /*--BODY: CARDS PRODUCTOS--*/
 .card {
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     width: 95%;
-    margin-left: 1rem;
-    border: 3px solid rgb(0, 0, 0);
-
+    margin: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
     .cardImg {
-        width: 40%;
+        width: 60%;
         margin: .5rem 1rem;
-
         img {
             width: 100%;
             object-fit: cover;
             height: auto;
         }
     }
-
     .cardContent {
-        /*display: flex;
-        flex-direction: column;
-        margin: 55px;
-        padding: 55px;*/
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 1.5rem;
-        gap: 0.8rem;
-        width: 65%;
-
+        display: block;
+        margin: 2px 5px;
+        width: 100%;
+        align-items: center;
         h2 {
             font-size: 1.8rem;
             font-weight: bold;
             color: #333;
-            margin: 0;
+            padding: 0 0 .5rem 2rem;
+
+        }
+        h3{
+            font-size: 1.4rem;
+            padding: 0 0 2rem 10rem;
         }
         p{
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.5;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #070707;
+            padding: 0 0 3rem 8rem;
+        }
+        .cardContent-compra{
+            width: 40%;
+            height: 52px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border: none;   
+            background-color: brown;
+            box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
+            position: relative;
+            left: 6rem;
+            bottom: 2rem;
+            transition: transform 0.3s ease;
+            &:hover{
+                transform: scale(1.1);
+                background-color: rgba(165, 42, 42, 0.445);
+            }
+            &:active{
+                transform: scale(1.1);
+                background-color:rgba(206, 206, 206, 0.13);
+            }
         }
     }
-}
+    .cardContainer{
+        display: block;
+        width: 20rem;
+        height: 15rem;
+        padding: 15px 0 15px;
+        overflow: hidden;
+        position: relative;
+        .cardContainer-cantidad{
+            box-shadow: 0 8px 15px rgba(0, 0, 1, 0.2);
+            background-color: aliceblue;
+            border-radius: 18px;
+            border: 1px solid gray;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            top: 5rem;
+            margin: 0 1rem;
+            button{
+                width: 25%;
+                height: 32px;
+                background-color: brown;
+                border: none;
+                border-radius: 20px;
+                font-size: 1rem;
+            }
+            span{
+                font-size: 1rem;
+            }
+    }
+    .cardContainer-stock{
+        font-size: 15px;
+        position: absolute;
+        top: 15rem;
+        left: 4rem;
+    }
+}}
