@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*-------------GLOBALES-------------------*/
 * {
   margin: 0;
@@ -190,6 +189,7 @@
 /*---Menu desplegable---*/
 .containerMenu {
   position: fixed;
+  z-index: 1000;
   background-color: rgb(255, 255, 255);
   width: 50%;
   height: 980px;
@@ -205,11 +205,11 @@
       justify-content: space-around;
   border-right: 2px solid rgba(0, 0, 0, 0.1);
   -webkit-transform: translateX(-100%);
-          transform: translateX(-100%); /* Inicialmente oculto fuera de la pantalla */
+          transform: translateX(-100%); /* oculto fuera de la pantalla */
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease; /* Animación suave */
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   overflow: hidden;
 }
 .containerMenu ion-icon {
@@ -416,6 +416,7 @@ section .buscador:focus {
   margin: 0 1rem;
 }
 .card .cardContainer .cardContainer-cantidad button {
+  z-index: 1;
   width: 25%;
   height: 32px;
   background-color: brown;
