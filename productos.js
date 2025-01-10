@@ -85,6 +85,7 @@ function crearCards(productos) {
         `
 
         containerProducto.appendChild(newCard)
+        newCard.getElementsByTagName("button")[0].addEventListener('click', ()=> agregarCarrito(producto))
     });
 }
 crearCards(productos);
