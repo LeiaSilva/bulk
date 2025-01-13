@@ -56,7 +56,7 @@ const productos = [
 ];
 
 
-
+/*--CREAR PRODUCTOS--*/
 
 const containerProducto = document.getElementById('containerProducto');
 
@@ -89,3 +89,5 @@ function crearCards(productos) {
     });
 }
 crearCards(productos);
+
+/*--CREAR CARDS EN CARRITO--*/
