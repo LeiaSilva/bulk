@@ -1,30 +1,28 @@
-/*--muestra perfil--*/
-const perifl = document.getElementById('perfil')
-const menu = document.getElementById('menu')
-const closeMenu = document.getElementById('closeMenu')
+/*--Muestra perfil y carrito--*/
+const perifl = document.getElementById('perfil');
+const menu = document.getElementById('menu');
+const closeMenu = document.getElementById('closeMenu');
+const carrito = document.getElementById('carrito');
+const ventanaCarrito = document.getElementById('carritoVentana');
+const closeCarrito = document.getElementById('closeCarrito');
 
-perifl.addEventListener('click', (e) =>{
-    menu.classList.toggle('show')
+perifl.addEventListener('click' , (e)=>{
+    menu.classList.toggle('show');
 })
-closeMenu.addEventListener('click', (e) =>{
+closeMenu.addEventListener('click' , (e) =>{
     if(menu.classList.contains('show')){
         menu.classList.remove('show');
     }else{
-        alert("El menu esta cerrado")
+        alert("El menu ya esta cerrado")
     }
 })
-/*--muestra ventana carrito--
-const carrito = document.getElementById('carrito');
-const ventanaCarrito = document.getElementById('carritoVentana');
-const closeCarrito = document.getElementById('closeMenu');
-
-carrito.addEventListener('click' , (e) =>{
-    ventanaCarrito.classList.toggle('show')
+carrito.addEventListener('click' , (e)=>{
+    ventanaCarrito.classList.toggle('showCarrito');
 })
-closeCarrito.addEventListener('click', (e) =>{
-    if(ventanaCarrito.classList.contains('show')){
-        ventanaCarrito.classList.remove('show');
+closeCarrito.addEventListener('click' , (e)=>{
+    if(ventanaCarrito.classList.contains('showCarrito')){
+        ventanaCarrito.classList.remove('showCarrito')
     }else{
-        alert("El menu esta cerrado")
+        alert("Elcarrito ya esta cerrado")
     }
-})*/
+})

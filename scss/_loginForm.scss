@@ -3,7 +3,7 @@
     width: 90%;
     margin: 1.5rem auto;
     margin-top: 5rem;
-    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
 }
 .loginForm{
     width: 100%;
@@ -28,6 +28,7 @@
     height: 2.3rem;
     border-radius: 10px;
     font-size: 1rem;
+    border: none;
 }
 .loginForm-container input:focus{
     border: 3px solid rgb(24, 99, 240);
@@ -63,6 +64,8 @@
     font-size: 17px;
     position: relative;
     bottom: 2rem;
+    overflow: hidden;
+    border: none;
 }
 .loginForm button a{
     text-align: center;

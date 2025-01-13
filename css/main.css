@@ -11,7 +11,8 @@
   width: 90%;
   margin: 1.5rem auto;
   margin-top: 5rem;
-  border-radius: 30px;
+  -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
+          box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
 }
 
 .loginForm {
@@ -44,6 +45,7 @@
   height: 2.3rem;
   border-radius: 10px;
   font-size: 1rem;
+  border: none;
 }
 
 .loginForm-container input:focus {
@@ -85,6 +87,8 @@
   font-size: 17px;
   position: relative;
   bottom: 2rem;
+  overflow: hidden;
+  border: none;
 }
 
 .loginForm button a {
@@ -308,6 +312,11 @@
   border-radius: 20px;
 }
 
+.showCarrito {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 /*--ACTUALIZACION--*/
 section {
   margin: 10px;
@@ -330,6 +339,8 @@ section .buscador {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-radius: 30px;
+  -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 section .buscador input {
   font-size: 1rem;
