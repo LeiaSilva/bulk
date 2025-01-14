@@ -27,7 +27,7 @@ const productos = [
         img: '../assets/07915003.jpg',
     },
     {
-        id: 1,
+        id: 4,
         nombre: 'MESA EAMES 1.40 X 0.90',
         description: 'blanco',
         stock: 100,
@@ -36,7 +36,7 @@ const productos = [
         img: '../assets/07110003.jpg',
     },
     {
-        id: 1,
+        id: 5,
         nombre: 'MESA EAMES 1.40 X 0.90',
         description: 'blanco',
         stock: 100,
@@ -45,7 +45,7 @@ const productos = [
         img: '../assets/07110003.jpg',
     },
     {
-        id: 1,
+        id: 6,
         nombre: 'MESA EAMES 1.40 X 0.90',
         description: 'blanco',
         stock: 100,
@@ -91,3 +91,7 @@ function crearCards(productos) {
 crearCards(productos);
 
 /*--CREAR CARDS EN CARRITO--*/
+
+function cardsCarrito (){
+    
+}
