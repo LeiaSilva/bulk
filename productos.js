@@ -98,6 +98,7 @@ function crearCards(productos) {
             });
             agregarProductosCarrito(productos); 
             agregarCarrito(producto);
+            actualizarContadorCarrito();
 
 /*--AGREGAR CARDS A CARRITO--*/
             function agregarProductosCarrito(){
@@ -148,13 +149,19 @@ function carritoBtn(){
 function eliminarItemCarrito(event){
     const btnClickeado = event.target
     const productCarrito = btnClickeado.closest('.containerCarritoCards-content');
+    const productoId = productCarrito.querySelector('img').getAttribute('src'); 
 
     if(productCarrito){
         productCarrito.remove();
+
+        let memoria = JSON.parse(localStorage.getItem("producto")) || [];
+        memoria = memoria.filter(item => item.img !== productoId);
+        localStorage.setItem("producto", JSON.stringify(memoria));
+
+        actualizarContadorCarrito();
     }else{
         console.error('El producto no existe.');
     }
-    actualizarContadorCarrito();
 }
 
 /*--AGREGAR O QUITAR ELEMENTOS DEL CARRITO--*/
@@ -175,16 +182,38 @@ function sumarCantidad(event) {
     const container = btn.closest('.containerCantidad');
     const contador = container.querySelector('.contador');
     let cantidad = parseInt(contador.textContent);
+    const productoId = container.closest('.containerCarritoCards-content').querySelector('img').getAttribute('src');
+
     contador.textContent = cantidad + 1;
+
+    let memoria = JSON.parse(localStorage.getItem("producto")) || [];
+    const indiceProducto = memoria.findIndex(item => item.img === productoId);
+
+    if (indiceProducto !== -1) {
+        memoria[indiceProducto].cantidad += 1; 
+    }
+
+    localStorage.setItem("producto", JSON.stringify(memoria));
     actualizarContadorCarrito();
+
 }
 function restarCantidad(event) {
     const btn = event.target;
     const container = btn.closest('.containerCantidad');
     const contador = container.querySelector('.contador');
     let cantidad = parseInt(contador.textContent);
+    const productoId = container.closest('.containerCarritoCards-content').querySelector('img').getAttribute('src');
+
     if (cantidad > 1) {
         contador.textContent = cantidad - 1;
+        let memoria = JSON.parse(localStorage.getItem("producto")) || [];
+        const indiceProducto = memoria.findIndex(item => item.img === productoId);
+
+        if (indiceProducto !== -1) {
+            memoria[indiceProducto].cantidad -= 1; 
+        }
+
+        localStorage.setItem("producto", JSON.stringify(memoria));
+        actualizarContadorCarrito();
     }
-    actualizarContadorCarrito();
 }
