@@ -1,5 +1,5 @@
 
-function agregarCarrito(producto){
+/*function agregarCarrito(producto){
     const memoria = JSON.parse(localStorage.getItem("producto"));
     if(!memoria){
         const nuevoProducto = getNuevoProductoParaMemoria(producto);

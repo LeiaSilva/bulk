@@ -2,7 +2,7 @@
 const perifl = document.getElementById('perfil');
 const menu = document.getElementById('menu');
 const closeMenu = document.getElementById('closeMenu');
-const carrito = document.getElementById('carrito');
+const carritoIcon = document.getElementById('carrito');
 const ventanaCarrito = document.getElementById('carritoVentana');
 const closeCarrito = document.getElementById('closeCarrito');
 
@@ -16,7 +16,7 @@ closeMenu.addEventListener('click' , (e) =>{
         alert("El menu ya esta cerrado")
     }
 })
-carrito.addEventListener('click' , (e)=>{
+carritoIcon.addEventListener('click' , (e)=>{
     ventanaCarrito.classList.toggle('showCarrito');
 })
 closeCarrito.addEventListener('click' , (e)=>{
