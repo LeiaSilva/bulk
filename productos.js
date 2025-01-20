@@ -97,9 +97,10 @@ function crearCards(productos) {
                 img: producto.img,
             });
             agregarProductosCarrito(productos); 
+            agregarCarrito(producto);
+
 /*--AGREGAR CARDS A CARRITO--*/
             function agregarProductosCarrito(){
-
                 const cardsCarrito = document.createElement('div');
                 const checkboxId = `checkbox-${producto.id}`;
             
@@ -129,6 +130,7 @@ function crearCards(productos) {
                     containerCarrito.appendChild(cardsCarrito);
                     carritoBtn();
                     agregarCantidadCarrito();
+                    actualizarContadorCarrito();
             }
         });
     });
@@ -152,6 +154,7 @@ function eliminarItemCarrito(event){
     }else{
         console.error('El producto no existe.');
     }
+    actualizarContadorCarrito();
 }
 
 /*--AGREGAR O QUITAR ELEMENTOS DEL CARRITO--*/
@@ -173,6 +176,7 @@ function sumarCantidad(event) {
     const contador = container.querySelector('.contador');
     let cantidad = parseInt(contador.textContent);
     contador.textContent = cantidad + 1;
+    actualizarContadorCarrito();
 }
 function restarCantidad(event) {
     const btn = event.target;
@@ -182,5 +186,5 @@ function restarCantidad(event) {
     if (cantidad > 1) {
         contador.textContent = cantidad - 1;
     }
+    actualizarContadorCarrito();
 }
-
