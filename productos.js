@@ -55,42 +55,7 @@ const productos = [
     },
 ];
 
-
-/*--CREAR PRODUCTOS--
-
-const containerProducto = document.getElementById('containerProducto');
-
-function crearCards(productos) {
-    productos.forEach(producto => {
-        const newCard = document.createElement('div');
-        newCard.classList.add('card');
-        newCard.innerHTML = `
-        <div class="cardImg">
-            <img src= ${producto.img}>
-        </div>
-        <div class= "cardContent">
-            <h2>${producto.nombre}</h2>
-            <h3>${producto.description}</h3>
-            <p>$${producto.precio}</p>
-            <button class= "cardContent-compra"> Agregar al carrito</button>
-        </div>
-        <div class= "cardContainer">
-            <div class= "cardContainer-cantidad">
-                <button>-</button>
-                <span> 0 </span>
-                <button>+</button>
-            </div>
-            <p class= "cardContainer-stock"> Stock : ${producto.stock} </p>
-        </div>
-        `
-
-        containerProducto.appendChild(newCard)
-        newCard.getElementsByTagName("button")[0].addEventListener('click', ()=> agregarCarrito(producto))
-    });
-}
-crearCards(productos);*/
-
-/*--CREAR CARDS EN CARRITO--*/
+/*--CREAR CARDS DE PRODUCTOS--*/
 
 const carrito = [];
 const containerProducto = document.getElementById('containerProducto');
@@ -132,7 +97,7 @@ function crearCards(productos) {
                 img: producto.img,
             });
             agregarProductosCarrito(productos); 
-
+/*--AGREGAR CARDS A CARRITO--*/
             function agregarProductosCarrito(){
 
                 const cardsCarrito = document.createElement('div');
@@ -148,13 +113,13 @@ function crearCards(productos) {
                         <h3 class="containerCarritoCards-content-names-description">${producto.description}</h3>
                         <p>$${producto.precio}</p>
                         <div class= "containerCantidad">
-                            <button>-</button>
-                            <span> 0 </span>
-                            <button>+</button>
+                            <button class="restar">-</button>
+                            <span class="contador"> 1 </span>
+                            <button class= "sumar">+</button>
                         </div>
                     </div>
                     <div class= "containerCarritoCards-content-icons">
-                        <ion-icon name="trash"></ion-icon>
+                        <ion-icon name="trash" class="trash"></ion-icon>
                         <div class= "containerCarritoCards-content-icons-checkbox">
                             <input type="checkbox" id="${checkboxId}" name="checkbox">
                             <label for="${checkboxId}">Armado</label>
@@ -162,8 +127,60 @@ function crearCards(productos) {
                     </div>
                     `
                     containerCarrito.appendChild(cardsCarrito);
+                    carritoBtn();
+                    agregarCantidadCarrito();
             }
         });
     });
 }
 crearCards(productos);
+
+
+/*--ELIMINA PRODUCTOS DEL CARRITO--*/
+function carritoBtn(){
+    const btnEliminarItem = document.querySelectorAll('.trash');
+    btnEliminarItem.forEach((btn) =>{
+        btn.addEventListener('click' ,  eliminarItemCarrito);
+    });
+}
+function eliminarItemCarrito(event){
+    const btnClickeado = event.target
+    const productCarrito = btnClickeado.closest('.containerCarritoCards-content');
+
+    if(productCarrito){
+        productCarrito.remove();
+    }else{
+        console.error('El producto no existe.');
+    }
+}
+
+/*--AGREGAR O QUITAR ELEMENTOS DEL CARRITO--*/
+function agregarCantidadCarrito() {
+    const btnSumarCantidad = document.querySelectorAll('.sumar');
+    const btnRestarCantidad = document.querySelectorAll('.restar');
+
+    btnSumarCantidad.forEach((btn) => {
+        btn.addEventListener('click', sumarCantidad);
+    });
+
+    btnRestarCantidad.forEach((btn) => {
+        btn.addEventListener('click', restarCantidad);
+    });
+}
+function sumarCantidad(event) {
+    const btn = event.target;
+    const container = btn.closest('.containerCantidad');
+    const contador = container.querySelector('.contador');
+    let cantidad = parseInt(contador.textContent);
+    contador.textContent = cantidad + 1;
+}
+function restarCantidad(event) {
+    const btn = event.target;
+    const container = btn.closest('.containerCantidad');
+    const contador = container.querySelector('.contador');
+    let cantidad = parseInt(contador.textContent);
+    if (cantidad > 1) {
+        contador.textContent = cantidad - 1;
+    }
+}
+
