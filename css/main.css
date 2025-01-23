@@ -213,15 +213,19 @@
   font-weight: bold;
 }
 
-/*--CONTADOR VISIBILIDAD--
-.oculto{
-    visibility: hidden;
-    transition: opacity 0.3s ease;
+/*--CONTADOR VISIBILIDAD--*/
+.oculto {
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
-.visible{
-    visibility: visible;
-    transition: opacity 0.3s ease;
-}*/
+
+.visible {
+  visibility: visible;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
 /*---Menu desplegable---*/
 .containerMenu {
   position: fixed;

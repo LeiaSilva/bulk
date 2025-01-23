@@ -86,7 +86,7 @@ function crearCards(productos) {
         `
 
         containerProducto.appendChild(newCard)
-        newCard.querySelectorAll(".cardContent-compra")[0].addEventListener('click', ()=> {
+        newCard.querySelectorAll(".cardContent-compra")[0].addEventListener('click', () => {
             carrito.push({
                 id: producto.id,
                 nombre: producto.nombre,
@@ -96,17 +96,25 @@ function crearCards(productos) {
                 codigo: producto.codigo,
                 img: producto.img,
             });
-            agregarProductosCarrito(productos); 
+            agregarProductosCarrito(productos);
             agregarCarrito(producto);
             actualizarContadorCarrito();
 
-/*--AGREGAR CARDS A CARRITO--*/
-            function agregarProductosCarrito(){
-                const cardsCarrito = document.createElement('div');
-                const checkboxId = `checkbox-${producto.id}`;
-            
-                cardsCarrito.className = 'containerCarritoCards-content';
-                cardsCarrito.innerHTML = `
+            /*--AGREGAR CARDS A CARRITO--*/
+            function agregarProductosCarrito() {
+                const productoExistente = Array.from(containerCarrito.children).find(card => card.querySelector('img').getAttribute('src') === producto.img);
+
+
+                if (productoExistente) {
+                    const contador = productoExistente.querySelector('.contador');
+                    let cantidadActual = parseInt(contador.textContent);
+                    contador.textContent = cantidadActual + 1;
+                } else {
+                    const cardsCarrito = document.createElement('div');
+                    const checkboxId = `checkbox-${producto.id}`;
+
+                    cardsCarrito.className = 'containerCarritoCards-content';
+                    cardsCarrito.innerHTML = `
                     <div class="containerCarritoCards-content-img">
                         <img src= ${producto.img}>
                     </div>
@@ -132,6 +140,7 @@ function crearCards(productos) {
                     carritoBtn();
                     agregarCantidadCarrito();
                     actualizarContadorCarrito();
+                }
             }
         });
     });
@@ -140,18 +149,18 @@ crearCards(productos);
 
 
 /*--ELIMINA PRODUCTOS DEL CARRITO--*/
-function carritoBtn(){
+function carritoBtn() {
     const btnEliminarItem = document.querySelectorAll('.trash');
-    btnEliminarItem.forEach((btn) =>{
-        btn.addEventListener('click' ,  eliminarItemCarrito);
+    btnEliminarItem.forEach((btn) => {
+        btn.addEventListener('click', eliminarItemCarrito);
     });
 }
-function eliminarItemCarrito(event){
+function eliminarItemCarrito(event) {
     const btnClickeado = event.target
     const productCarrito = btnClickeado.closest('.containerCarritoCards-content');
-    const productoId = productCarrito.querySelector('img').getAttribute('src'); 
+    const productoId = productCarrito.querySelector('img').getAttribute('src');
 
-    if(productCarrito){
+    if (productCarrito) {
         productCarrito.remove();
 
         let memoria = JSON.parse(localStorage.getItem("producto")) || [];
@@ -159,7 +168,12 @@ function eliminarItemCarrito(event){
         localStorage.setItem("producto", JSON.stringify(memoria));
 
         actualizarContadorCarrito();
-    }else{
+        if(memoria.length === 0){
+            const contadorCarrito = document.getElementById('contadorCarrito');
+            contadorCarrito.textContent = "0";
+            contadorCarrito.classList.add('oculto');
+        }
+    } else {
         console.error('El producto no existe.');
     }
 }
@@ -190,7 +204,7 @@ function sumarCantidad(event) {
     const indiceProducto = memoria.findIndex(item => item.img === productoId);
 
     if (indiceProducto !== -1) {
-        memoria[indiceProducto].cantidad += 1; 
+        memoria[indiceProducto].cantidad += 1;
     }
 
     localStorage.setItem("producto", JSON.stringify(memoria));
@@ -210,7 +224,7 @@ function restarCantidad(event) {
         const indiceProducto = memoria.findIndex(item => item.img === productoId);
 
         if (indiceProducto !== -1) {
-            memoria[indiceProducto].cantidad -= 1; 
+            memoria[indiceProducto].cantidad -= 1;
         }
 
         localStorage.setItem("producto", JSON.stringify(memoria));
