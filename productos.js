@@ -104,6 +104,7 @@ function crearCards(productos) {
                     const contador = productoExistente.querySelector('.contador');
                     let cantidadActual = parseInt(contador.textContent);
                     contador.textContent = cantidadActual + 1;
+
                 } else {
                     const cardsCarrito = document.createElement('div');
                     const checkboxId = `checkbox-${producto.id}`;
@@ -115,7 +116,7 @@ function crearCards(productos) {
                     </div>
                     <div class ="containerCarritoCards-content-names">
                         <h2>${producto.nombre}</h2>
-                        <h3 class="containerCarritoCards-content-names-description">${producto.description}</h3>
+                        <h4 class="containerCarritoCards-content-names-description">${producto.description}</h3>
                         <p>$${producto.precio}</p>
                         <div class= "containerCantidad">
                             <button class="restar">-</button>
@@ -136,6 +137,7 @@ function crearCards(productos) {
                     agregarCantidadCarrito();
                     actualizarContadorCarrito();
                 }
+                mostrarMensajeCarritoVacio()
             }
         });
     });
@@ -163,7 +165,8 @@ function eliminarItemCarrito(event) {
         localStorage.setItem("producto", JSON.stringify(memoria));
 
         actualizarContadorCarrito();
-        if(memoria.length === 0){
+        mostrarMensajeCarritoVacio();
+        if (memoria.length === 0) {
             const contadorCarrito = document.getElementById('contadorCarrito');
             contadorCarrito.textContent = "0";
             contadorCarrito.classList.add('oculto');
@@ -224,5 +227,16 @@ function restarCantidad(event) {
 
         localStorage.setItem("producto", JSON.stringify(memoria));
         actualizarContadorCarrito();
+    }
+}
+/*--TEXTO DE CARRITO VACIO--*/
+function mostrarMensajeCarritoVacio() {
+    const textCarritoVacio = document.getElementById('textCarritoVacio');
+    const productosEnCarrito = containerCarrito.children;
+
+    if (productosEnCarrito.length === 0) {
+        textCarritoVacio.style.opacity = "1";
+    } else {
+        textCarritoVacio.style.opacity = "0";
     }
 }
