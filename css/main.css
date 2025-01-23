@@ -479,7 +479,8 @@
           justify-content: space-between;
   margin: 0 5rem;
   padding: auto;
-  width: 50%;
+  min-width: 50%;
+  max-width: 50%;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad button {
   z-index: 1;
