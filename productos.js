@@ -1,8 +1,8 @@
 const productos = [
     {
         id: 1,
-        nombre: 'MESA EAMES 1.40 X 0.90',
-        description: 'blanco',
+        nombre: 'MESA EAMES',
+        description: 'blanco 1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
@@ -19,8 +19,8 @@ const productos = [
     },
     {
         id: 3,
-        nombre: 'SILLA EAMES X 4 ',
-        description: 'blanco',
+        nombre: 'SILLA EAMES ',
+        description: 'blanco x4',
         stock: 57,
         precio: 91.116,
         codigo: '07915003',
@@ -28,8 +28,8 @@ const productos = [
     },
     {
         id: 4,
-        nombre: 'MESA EAMES 1.40 X 0.90',
-        description: 'blanco',
+        nombre: 'MESA EAMES',
+        description: 'blanco 1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
@@ -37,8 +37,8 @@ const productos = [
     },
     {
         id: 5,
-        nombre: 'MESA EAMES 1.40 X 0.90',
-        description: 'blanco',
+        nombre: 'MESA EAMES',
+        description: 'blanco 1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
@@ -46,8 +46,8 @@ const productos = [
     },
     {
         id: 6,
-        nombre: 'MESA EAMES 1.40 X 0.90',
-        description: 'blanco',
+        nombre: 'MESA EAMES',
+        description: 'blanco 1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
