@@ -76,11 +76,6 @@ function crearCards(productos) {
             <button class= "cardContent-compra" id= "comprar"> Agregar al carrito</button>
         </div>
         <div class= "cardContainer">
-            <div class= "cardContainer-cantidad">
-                <button>-</button>
-                <span> 0 </span>
-                <button>+</button>
-            </div>
             <p class= "cardContainer-stock"> Stock : ${producto.stock} </p>
         </div>
         `

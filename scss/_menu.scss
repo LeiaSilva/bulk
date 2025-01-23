@@ -250,6 +250,7 @@
 
             .containerCarritoCards-content-names {
                 display: block;
+                margin: 0 3rem;
 
                 h2 {
                     font-size: 1.2rem;
@@ -257,6 +258,8 @@
                     position: relative;
                     left: 0;
                     bottom: 50px;
+                    max-width: 100%;
+                    text-overflow: ellipsis;
                 }
 
                 h3 {

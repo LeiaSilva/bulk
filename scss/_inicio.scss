@@ -66,25 +66,25 @@ section {
     }
     .cardContent {
         display: block;
-        margin: 2px 5px;
+        margin: 2px 2px;
         width: 100%;
-        align-items: center;
+        text-align: center;
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: bold;
             color: #333;
-            padding: 0 0 .5rem 2rem;
+            padding: 0 0 2rem 0rem;
 
         }
         h3{
             font-size: 1.4rem;
-            padding: 0 0 2rem 10rem;
+            padding: 0 0 2rem 1rem;
         }
         p{
             font-size: 2.5rem;
             font-weight: bold;
             color: #070707;
-            padding: 0 0 3rem 8rem;
+            padding: 0 0 3rem 1rem;
         }
         .cardContent-compra{
             width: 40%;
@@ -94,9 +94,7 @@ section {
             border: none;   
             background-color: brown;
             box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
-            position: relative;
-            left: 6rem;
-            bottom: 2rem;
+            margin: 0 0 1rem 1rem;
             transition: transform 0.3s ease;
             &:hover{
                 transform: scale(1.1);
