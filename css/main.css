@@ -6,6 +6,37 @@
 }
 
 /*---Particiones---*/
+/*--PROGRESS LINE--*/
+.containerProgress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 25px;
+  margin: 1.5rem 5rem;
+  padding: 10px;
+}
+.containerProgress .step {
+  background-color: grey;
+  padding: 8px;
+  border-radius: 500px;
+}
+.containerProgress .step ion-icon, .containerProgress .step i {
+  font-size: 1.7rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.containerProgress .progressLine {
+  background-color: black;
+  height: 3px;
+  width: 10%;
+}
+
 .loginContainer {
   background-color: rgb(151, 27, 27);
   width: 90%;

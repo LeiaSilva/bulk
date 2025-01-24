@@ -1,0 +1,24 @@
+/*--PROGRESS LINE--*/
+.containerProgress{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 1.5rem 5rem;
+    padding: 10px;
+
+    .step{
+        background-color: grey;
+        padding: 8px;
+        border-radius: 500px;
+        ion-icon , i {
+            font-size: 1.7rem;
+            object-fit: cover;
+        }
+    }
+    .progressLine{
+        background-color: black;
+        height: 3px;
+        width: 10%;
+    }
+}
