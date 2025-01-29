@@ -22,3 +22,83 @@
         width: 10%;
     }
 }
+/*--FORMULARIO ENTREGA--*/
+.entregaContainer{
+    width: 95%; 
+    height: 50rem;
+    overflow: hidden;
+    .entregaContainer-form{
+        background-color: rgb(251, 253, 253);
+        width: 95%;
+        height: 95%;
+        margin: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        //box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
+        .entregaContainer-form-inputs{
+            margin: 12px 1px;
+            padding: 5px;
+            border-bottom: 1px solid gray;
+            label{
+                font-size: 1.5rem;
+                margin: 2rem 4px;
+            }
+            input{
+                font-size: 1.1rem;
+                width: 93.5%;
+                padding: 15px;
+                border-radius: 0px;
+                margin: 0 4px 0 4px;
+                &:focus{
+                    border: 3px solid rgb(24, 99, 240);
+                    outline: none;
+                    box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+                }
+                &:active{
+                    border: 3px solid rgb(24, 99, 240);
+                    outline: none;
+                    box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+                }
+            }
+            .entregasAdv{
+                font-size: 1rem;
+                color: red;
+                text-align: center;
+                position: relative;
+                bottom: 1rem;
+            }
+            i{
+                position: relative;
+                left: 95%;
+                bottom: 2.2rem;
+                color: red;
+                font-size: 1.3rem;
+            }
+            .clienteContainer{
+                margin: 12px 1px;
+                padding: 5px;
+                .selectBox{
+                    width: 100%;
+                    padding: 15px;
+                    border: none;
+                    font-size: 1rem;
+                    &:focus{
+                        border: 3px solid rgb(24, 99, 240);
+                        outline: none;
+                        box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+                    }
+                }
+            }
+        }
+        button{
+            width: 30%;
+            padding: 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            background-color: coral;
+            margin: 0 17rem;
+        }
+    }
+}

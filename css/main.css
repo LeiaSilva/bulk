@@ -37,6 +37,94 @@
   width: 10%;
 }
 
+/*--FORMULARIO ENTREGA--*/
+.entregaContainer {
+  width: 95%;
+  height: 50rem;
+  overflow: hidden;
+}
+.entregaContainer .entregaContainer-form {
+  background-color: rgb(251, 253, 253);
+  width: 95%;
+  height: 95%;
+  margin: 1rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs {
+  margin: 12px 1px;
+  padding: 5px;
+  border-bottom: 1px solid gray;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs label {
+  font-size: 1.5rem;
+  margin: 2rem 4px;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs input {
+  font-size: 1.1rem;
+  width: 93.5%;
+  padding: 15px;
+  border-radius: 0px;
+  margin: 0 4px 0 4px;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs input:focus {
+  border: 3px solid rgb(24, 99, 240);
+  outline: none;
+  -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+          box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs input:active {
+  border: 3px solid rgb(24, 99, 240);
+  outline: none;
+  -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+          box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .entregasAdv {
+  font-size: 1rem;
+  color: red;
+  text-align: center;
+  position: relative;
+  bottom: 1rem;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs i {
+  position: relative;
+  left: 95%;
+  bottom: 2.2rem;
+  color: red;
+  font-size: 1.3rem;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer {
+  margin: 12px 1px;
+  padding: 5px;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer .selectBox {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  font-size: 1rem;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer .selectBox:focus {
+  border: 3px solid rgb(24, 99, 240);
+  outline: none;
+  -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+          box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+}
+.entregaContainer .entregaContainer-form button {
+  width: 30%;
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: coral;
+  margin: 0 17rem;
+}
+
 .loginContainer {
   background-color: rgb(151, 27, 27);
   width: 90%;
