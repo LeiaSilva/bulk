@@ -58,13 +58,16 @@
   overflow: hidden;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs {
-  margin: 12px 1px;
+  margin: 50px 1px;
   padding: 5px;
   border-bottom: 1px solid gray;
+  overflow: hidden;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs label {
   font-size: 1.5rem;
-  margin: 2rem 4px;
+  margin: 0 4px;
+  position: relative;
+  bottom: 5%;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs input {
   font-size: 1.1rem;
@@ -121,8 +124,12 @@
   font-size: 1.2rem;
   border: none;
   border-radius: 8px;
-  background-color: coral;
+  background-color: brown;
   margin: 0 17rem;
+}
+.entregaContainer .entregaContainer-form button a {
+  text-decoration: none;
+  color: white;
 }
 
 .loginContainer {
@@ -507,8 +514,12 @@
   width: 50%;
   padding: 10px;
   font-size: 1rem;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: none;
+}
+.containerCarrito .containerCarritoBoton button a {
+  text-decoration: none;
+  color: black;
 }
 .containerCarrito .containerCarritoCards {
   width: 100%;
