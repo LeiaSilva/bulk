@@ -1,5 +1,6 @@
 /*--PROGRESS--*/
 /*--FORMULARIO--*/
+/*--GENERAR SELECTIONS--*/
 const clientes = [
     {
         nombre: 'Leia Belén Silva'
@@ -46,3 +47,16 @@ function createSelectBox(){
     clienteContainer.appendChild(select);
 }
 document.addEventListener("DOMContentLoaded", createSelectBox);
+
+/*--VALIDAR FOMULARIO--*/
+const validarFormularioEntrega = document.getElementById('entregas');
+const cliente = document.getElementById('clienteContainer');
+const transportista = document.getElementById('transportista');
+const lugarEntrega = document.getElementById('lugarEntrega');
+const errorMsj = document.querySelectorAll('.entregasAdv');
+
+function validarFormEntrega(){
+    let isValid = true;
+    errorMsj.forEach((msg) => msg.style.display = "none");
+    
+}

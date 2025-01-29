@@ -94,6 +94,7 @@
   text-align: center;
   position: relative;
   bottom: 1rem;
+  visibility: hidden;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs i {
   position: relative;
@@ -101,6 +102,7 @@
   bottom: 2.2rem;
   color: red;
   font-size: 1.3rem;
+  visibility: hidden;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer {
   margin: 12px 1px;
@@ -125,7 +127,7 @@
   border: none;
   border-radius: 8px;
   background-color: brown;
-  margin: 0 17rem;
+  margin: 0 15rem;
 }
 .entregaContainer .entregaContainer-form button a {
   text-decoration: none;
