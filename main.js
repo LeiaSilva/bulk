@@ -1,5 +1,5 @@
 const formulario = document.getElementById('login')
-const inputs = document.querySelectorAll('#login input')
+const inputsLogin = document.querySelectorAll('#login input')
 const loginError = document.getElementById('error')
 
 const expresiones = {
@@ -43,8 +43,9 @@ const validarFormulario = (e) =>{
 }
 
 
-inputs.forEach((input)=> {
-    input.addEventListener('keyup', validarFormulario)
+inputsLogin.forEach((input)=> {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
 })
 
 

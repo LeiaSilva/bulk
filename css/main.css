@@ -23,10 +23,11 @@
 }
 .containerProgress .step {
   background-color: grey;
-  padding: 8px;
+  padding: 10px;
   border-radius: 500px;
 }
-.containerProgress .step ion-icon, .containerProgress .step i {
+.containerProgress .step ion-icon,
+.containerProgress .step i {
   font-size: 1.7rem;
   -o-object-fit: cover;
      object-fit: cover;
@@ -35,6 +36,19 @@
   background-color: black;
   height: 3px;
   width: 10%;
+}
+
+/*--ESTILOS DEL PROGRESO--*/
+.step.completed {
+  background-color: green;
+}
+
+.step.active {
+  border: 3px solid brown;
+}
+
+.progressLine.completed {
+  background-color: green;
 }
 
 /*--FORMULARIO ENTREGA--*/
@@ -93,16 +107,16 @@
   color: red;
   text-align: center;
   position: relative;
-  bottom: 1rem;
-  visibility: hidden;
+  bottom: 0rem;
+  opacity: 0;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs i {
   position: relative;
-  left: 95%;
-  bottom: 2.2rem;
+  right: 3rem;
+  bottom: -0.2rem;
+  font-size: 1.4rem;
   color: red;
-  font-size: 1.3rem;
-  visibility: hidden;
+  opacity: 0;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer {
   margin: 12px 1px;
@@ -113,6 +127,7 @@
   padding: 15px;
   border: none;
   font-size: 1rem;
+  background-color: rgb(230, 229, 229);
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer .selectBox:focus {
   border: 3px solid rgb(24, 99, 240);
@@ -120,20 +135,60 @@
   -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
           box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
 }
-.entregaContainer .entregaContainer-form button {
-  width: 30%;
-  padding: 20px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 8px;
-  background-color: brown;
-  margin: 0 15rem;
+.entregaContainer .entregaContainer-form .entregaContainer-form-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.entregaContainer .entregaContainer-form button a {
-  text-decoration: none;
+.entregaContainer .entregaContainer-form .entregaContainer-form-buttons .nextStep {
+  width: 15%;
+  padding: 15px;
+  border: none;
+  background-color: brown;
   color: white;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  border-radius: 8px;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-buttons .nextStep:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #4CAF50;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-buttons .nextStep:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: rgba(206, 206, 206, 0.13);
+}
+.entregaContainer .entregaContainer-form .prevStep {
+  width: 15%;
+  padding: 15px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.entregaContainer .entregaContainer-form .prevStep:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #4CAF50;
+}
+.entregaContainer .entregaContainer-form .prevStep:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: rgba(206, 206, 206, 0.13);
 }
 
+/*--VALIDACION FORM--*/
 .loginContainer {
   background-color: rgb(151, 27, 27);
   width: 90%;

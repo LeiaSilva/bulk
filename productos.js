@@ -240,3 +240,9 @@ function mostrarMensajeCarritoVacio() {
         textCarritoVacio.style.opacity = "0";
     }
 }
+
+/*--EVENTO CONTINUAR--*/
+document.getElementById('step0').addEventListener('click', function(){
+    window.location.href = 'entrega.html';
+
+})

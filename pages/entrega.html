@@ -54,33 +54,35 @@
     <main>
         <!--BARRA PROGRESO-->
         <section class="containerProgress" id="progress">
-            <div class="step"><ion-icon name="cart-outline"></ion-icon></div>
-            <div class="progressLine"></div>
+            <div class="step" ><ion-icon name="cart-outline"></ion-icon></div>
+            <div class="progressLine" ></div>
             <div class="step"><i class='bx bxs-truck'></i></div>
-            <div class="progressLine"></div>
+            <div class="progressLine" ></div>
             <div class="step"><i class='bx bx-notepad'></i></div>
         </section>
         <!--FORMULARIO ENTREGA-->
         <section class="entregaContainer">
             <form action="#" id="entregas" class="entregaContainer-form">
                 <div class="entregaContainer-form-inputs" >
-                    <div class="clienteContainer" id="clienteContainer"></div>
+                    <div class="clienteContainer" id="clienteContainer" name ="cliente"></div>
                     <p class="entregasAdv" >Este campo debe estar completo.</p>
                 </div>
                 <div class="entregaContainer-form-inputs" id="transportistaContainer">
                     <label for="text">Transportista</label>
                     <input type="text" placeholder="Nombre del transportista" name="transportista">
-                    <i class='bx bxs-x-circle loginValidacion'></i>
+                    <i class='bx bxs-x-circle entregaValidacion'></i>
                     <p class="entregasAdv" >Este campo debe estar completo.</p>
                 </div>
                 <div class="entregaContainer-form-inputs" id="lugarEntregaContainer">
                     <label for="text">Lugar de Entrega</label>
                     <input type="text" placeholder="Ej: Moldes 4759" name="lugarEntrega">
-                    <i class='bx bxs-x-circle loginValidacion'></i>
+                    <i class='bx bxs-x-circle entregaValidacion'></i>
                     <p class="entregasAdv" >Este campo debe estar completo.</p>
                 </div>
-
-                <button> <a href="#">Finalizar</a></button>
+                <div class="entregaContainer-form-buttons">
+                    <button  class="prevStep" onclick="prevStep()">Atrás</button>
+                    <button type="submit" class="nextStep" onclick="nextStep()">Continuar</button>
+                </div>
             </form>
         </section>
         

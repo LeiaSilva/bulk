@@ -1,5 +1,5 @@
 /*--PROGRESS LINE--*/
-.containerProgress{
+.containerProgress {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,27 +7,46 @@
     margin: 1.5rem 5rem;
     padding: 10px;
 
-    .step{
+    .step {
         background-color: grey;
-        padding: 8px;
+        padding: 10px;
         border-radius: 500px;
-        ion-icon , i {
+
+        ion-icon,
+        i {
             font-size: 1.7rem;
             object-fit: cover;
         }
     }
-    .progressLine{
+
+    .progressLine {
         background-color: black;
         height: 3px;
         width: 10%;
     }
 }
+
+/*--ESTILOS DEL PROGRESO--*/
+.step.completed {
+    background-color: green;
+}
+.step.active{
+    border: 3px solid brown;
+}
+
+.progressLine.completed{
+    background-color: green;
+}
+
+
+
 /*--FORMULARIO ENTREGA--*/
-.entregaContainer{
-    width: 95%; 
+.entregaContainer {
+    width: 95%;
     height: 50rem;
     overflow: hidden;
-    .entregaContainer-form{
+
+    .entregaContainer-form {
         background-color: rgb(251, 253, 253);
         width: 95%;
         height: 95%;
@@ -35,59 +54,70 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        .entregaContainer-form-inputs{
+
+        .entregaContainer-form-inputs {
             margin: 50px 1px;
             padding: 5px;
             border-bottom: 1px solid gray;
             overflow: hidden;
-            label{
+
+            label {
                 font-size: 1.5rem;
                 margin: 0 4px;
                 position: relative;
                 bottom: 5%;
             }
-            input{
+
+            input {
                 font-size: 1.1rem;
                 width: 93.5%;
                 padding: 15px;
                 border-radius: 0px;
                 margin: 0 4px 0 4px;
-                &:focus{
+
+                &:focus {
                     border: 3px solid rgb(24, 99, 240);
                     outline: none;
                     box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
                 }
-                &:active{
+
+                &:active {
                     border: 3px solid rgb(24, 99, 240);
                     outline: none;
                     box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
                 }
             }
-            .entregasAdv{
+
+            .entregasAdv {
                 font-size: 1rem;
                 color: red;
                 text-align: center;
                 position: relative;
-                bottom: 1rem;
-                visibility: hidden;
+                bottom: 0rem;
+                opacity: 0;
             }
-            i{
+
+            i {
                 position: relative;
-                left: 95%;
-                bottom: 2.2rem;
+                right: 3rem;
+                bottom: -.2rem;
+                font-size: 1.4rem;
                 color: red;
-                font-size: 1.3rem;
-                visibility: hidden;
+                opacity: 0;
             }
-            .clienteContainer{
+
+            .clienteContainer {
                 margin: 12px 1px;
                 padding: 5px;
-                .selectBox{
+
+                .selectBox {
                     width: 100%;
                     padding: 15px;
                     border: none;
                     font-size: 1rem;
-                    &:focus{
+                    background-color: rgb(230, 229, 229);
+
+                    &:focus {
                         border: 3px solid rgb(24, 99, 240);
                         outline: none;
                         box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
@@ -95,18 +125,53 @@
                 }
             }
         }
-        button{
-            width: 30%;
-            padding: 20px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 8px;
-            background-color: brown;
-            margin: 0 15rem;
-            a{
-                text-decoration: none;
+
+        .entregaContainer-form-buttons {
+            display: flex;
+            justify-content: space-between;
+
+            .nextStep {
+                width: 15%;
+                padding: 15px;
+                border: none;
+                background-color: brown;
                 color: white;
+                transition: transform 0.3s ease;
+                border-radius: 8px;
+
+                &:hover {
+                    transform: scale(1.1);
+                    background-color: #4CAF50;
+                }
+
+                &:active {
+                    transform: scale(1.1);
+                    background-color: rgba(206, 206, 206, 0.13);
+                }
             }
+        }
+        .prevStep {
+            width: 15%;
+            padding: 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+                background-color: #4CAF50;
+            }
+
+            &:active {
+                transform: scale(1.1);
+                background-color: rgba(206, 206, 206, 0.13);
+            }
+
+
         }
     }
 }
+
+/*--VALIDACION FORM--*/
