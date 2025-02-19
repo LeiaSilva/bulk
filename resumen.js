@@ -1,0 +1,99 @@
+document.addEventListener("DOMContentLoaded", function () {
+    /*-- DATOS QUE RECUPERA DEL LOCAL STORAGE = DATOS DE ENTREGA , PRODUCTOS Y SUMA TOTAL*/
+    const resumenContainer = document.getElementById("containerResumenEntrega");
+
+    const deliveryDetails = JSON.parse(localStorage.getItem("deliveryDetails"));
+
+    if (deliveryDetails) {
+        resumenContainer.innerHTML = `
+            <p>Cliente: ${deliveryDetails.cliente}</p>
+            <p>Transportista: ${deliveryDetails.transportista}</p>
+            <p>Lugar de Entrega:${deliveryDetails.lugarEntrega}</p>
+        `;
+    } else {
+        resumenContainer.innerHTML = "<p>No hay datos de entrega disponibles.</p>";
+    }
+    
+    const productosCarrito = JSON.parse(localStorage.getItem("producto")) || [];
+    const containerResumenCarrito = document.getElementById('containerResumenCarrito');
+    const containerResumenTotal = document.getElementById('contadorResumenTotalVenta');
+
+    if (productosCarrito.length === 0) {
+        containerResumen.innerHTML = "<p>Tu carrito está vacío.</p>";
+        return;
+    }
+
+    let totalCompra = 0;
+
+    // Mostrar los productos en la página de resumen.html
+    productosCarrito.forEach(producto => {
+        const cardsResumen = document.createElement('div');
+        const checkboxId = `checkbox-${producto.id}`;
+
+        cardsResumen.className = 'containerResumenCarrito-cards';
+        cardsResumen.innerHTML = `
+        <div class="containerResumenCarrito-cards-content-img">
+            <img src= ${producto.img}>
+        </div>
+        <div class ="containerResumenCarrito-cards-content-names">
+            <h2>${producto.nombre}</h2>
+            <h4 class="containerResumenCarrito-cards-content-names-description">${producto.description}</h3>
+            <p>$${producto.precio}</p>
+            <div class= "containerCantidad">
+                <button class="restar">-</button>
+                <span class="contador"> 1 </span>
+                <button class= "sumar">+</button>
+            </div>
+        </div>
+        <div class= "containerResumenCarrito-cards-content-icons">
+            <ion-icon name="trash" class="trash"></ion-icon>
+            <div class= "containerResumenCarrito-cards-content-icons-checkbox">
+                <input type="checkbox" id="${checkboxId}" name="checkbox">
+                <label for="${checkboxId}">Armado</label>
+            </div>
+        </div>
+        `
+
+        containerResumenCarrito.appendChild(cardsResumen);
+        totalCompra += producto.precio;
+    });
+    containerResumenTotal.innerHTML = `<h2>Total de la compra: $${totalCompra.toFixed(2)}</h2>
+    `
+});
+/*--BLOQUEAR PAGINA DE INICIO*/
+window.addEventListener("popstate", function(event) {
+    window.location.href = "inicio.html";
+});
+
+
+/*--EVENTO FINALIZAR VENTA--*/
+const btnFinalizar = document.getElementById('btnFinalizar');
+btnFinalizar.addEventListener('click', function() {
+    const containerCarrito = document.getElementById('containerCarritoCards');
+    containerCarrito.innerHTML = '';
+
+    const contadorCarrito = document.getElementById('contadorCarrito');
+    contadorCarrito.textContent = '0';
+    contadorCarrito.classList.add('oculto'); 
+
+    localStorage.removeItem('producto'); 
+    localStorage.removeItem('contadorCarrito');
+    
+    window.location.href = "inicio.html";
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
