@@ -69,20 +69,28 @@ window.addEventListener("popstate", function(event) {
 
 /*--EVENTO FINALIZAR VENTA--*/
 const btnFinalizar = document.getElementById('btnFinalizar');
-btnFinalizar.addEventListener('click', function() {
-    const containerCarrito = document.getElementById('containerCarritoCards');
-    containerCarrito.innerHTML = '';
-
-    const contadorCarrito = document.getElementById('contadorCarrito');
-    contadorCarrito.textContent = '0';
-    contadorCarrito.classList.add('oculto'); 
-
-    localStorage.removeItem('producto'); 
-    localStorage.removeItem('contadorCarrito');
     
-    window.location.href = "inicio.html";
+if (btnFinalizar) {
+    btnFinalizar.addEventListener('click', function() {
+        const containerCarrito = document.getElementById('containerCarritoCards');
+        if (containerCarrito) containerCarrito.innerHTML = '';
 
-});
+        const contadorCarrito = document.getElementById('contadorCarrito');
+        if (contadorCarrito) {
+            contadorCarrito.textContent = '0';
+            contadorCarrito.classList.add('oculto'); 
+        }
+
+        localStorage.removeItem('producto'); 
+        localStorage.removeItem('contadorCarrito');
+
+        window.location.href = "inicio.html";
+    });
+} else {
+    console.error("No se encontró el botón Finalizar.");
+}
+
+
 
 
 
