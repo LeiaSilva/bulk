@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const productosCarrito = JSON.parse(localStorage.getItem("producto")) || [];
     const containerResumenCarrito = document.getElementById('containerResumenCarrito');
-    const containerResumenTotal = document.getElementById('contadorResumenTotalVenta');
+    const containerResumenTotal = document.getElementById('containerResumenTotalVenta');
 
     if (productosCarrito.length === 0) {
-        containerResumen.innerHTML = "<p>Tu carrito está vacío.</p>";
+        containerResumenTotal.innerHTML = "<p>Tu carrito está vacío.</p>";
         return;
     }
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class ="containerResumenCarrito-cards-content-names">
             <h2>${producto.nombre}</h2>
-            <h4 class="containerResumenCarrito-cards-content-names-description">${producto.description}</h3>
+            <h4>${producto.description}</h4>
             <p>$${producto.precio}</p>
             <div class= "containerCantidad">
                 <button class="restar">-</button>
@@ -57,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
         containerResumenCarrito.appendChild(cardsResumen);
         totalCompra += producto.precio;
     });
-    containerResumenTotal.innerHTML = `<h2>Total de la compra: $${totalCompra.toFixed(2)}</h2>
+    containerResumenTotal.innerHTML = `
+    <p>Total de la compra: $${totalCompra.toFixed(2)}</p>
     `
 });
 /*--BLOQUEAR PAGINA DE INICIO*/
