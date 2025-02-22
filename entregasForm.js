@@ -61,13 +61,13 @@ window.addEventListener("popstate", function() {
 
 /*--FORMULARIO--*/
 const clientes = [
-    { nombre: 'Leia Belén Silva' },
-    { nombre: 'Lorena Perna' },
-    { nombre: 'Nelson Alfredo Silva' },
-    { nombre: 'Milagros Magali Pereyra' },
-    { nombre: 'Iker Murua Conde' },
-    { nombre: 'Leandro Ramallo' },
-    { nombre: 'Agustina Saenz' },
+    { nombre: 'Leia Belén Silva', direccion: 'Casilda 1005, Rosario'},
+    { nombre: 'Lorena Perna', direccion: 'Casilda 1005, Rosario' },
+    { nombre: 'Nelson Alfredo Silva',direccion: 'Casilda 1005, Rosario' },
+    { nombre: 'Milagros Magali Pereyra',direccion: 'Casilda 1005, Rosario' },
+    { nombre: 'Iker Murua Conde', direccion: 'Casilda 1005, Rosario' },
+    { nombre: 'Leandro Ramallo', direccion: 'Casilda 1005, Rosario' },
+    { nombre: 'Agustina Saenz', direccion: 'Casilda 1005, Rosario' },
 ];
 
 function createSelectBox() {

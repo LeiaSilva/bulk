@@ -2,56 +2,62 @@ const productos = [
     {
         id: 1,
         nombre: 'MESA EAMES',
-        description: 'blanco 1.40 X 0.90',
+        description: ' 1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
         img: '../assets/07110003.jpg',
+        colores: ['blanco', 'negro', 'rojo', 'azul', 'amarillo', 'verde', 'bordo', 'gris'],
     },
     {
         id: 2,
         nombre: 'SILLON MESH ALTO- SA 4006 ',
-        description: 'negro',
+        description: ' 1.40 X 0.90',
         stock: 55,
         precio: 83.547,
         codigo: '10450013',
         img: '../assets/10450013.jpeg',
+        colores: ['blanco', 'negro', 'rojo'],
     },
     {
         id: 3,
         nombre: 'SILLA EAMES ',
-        description: 'blanco x4',
+        description: ' 1.40 X 0.90',
         stock: 57,
         precio: 91.116,
         codigo: '07915003',
         img: '../assets/07915003.jpg',
+        colores: ['blanco', 'negro'],
     },
     {
         id: 4,
         nombre: 'MESA EAMES',
-        description: 'blanco 1.40 X 0.90',
+        description: '1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
         img: '../assets/07110003.jpg',
+        colores: ['blanco', 'negro', 'rojo', 'azul', 'bordo', 'gris'],
     },
     {
         id: 5,
         nombre: 'MESA EAMES',
-        description: 'blanco 1.40 X 0.90',
+        description: '1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
         img: '../assets/07110003.jpg',
+        colores: ['blanco', 'negro', 'rojo', 'azul', 'amarillo', 'verde', 'bordo', 'gris'],
     },
     {
         id: 6,
         nombre: 'MESA EAMES',
-        description: 'blanco 1.40 X 0.90',
+        description: '1.40 X 0.90',
         stock: 100,
         precio: 145000,
         codigo: '07110003',
         img: '../assets/07110003.jpg',
+        colores: ['blanco', 'negro', 'rojo', 'azul', 'amarillo', 'verde', 'bordo', 'gris'],
     },
 ];
 
@@ -68,19 +74,38 @@ function crearCards(productos) {
         newCard.innerHTML = `
         <div class="cardImg">
             <img src= ${producto.img}>
-        </div>
+            <span>${producto.codigo}</span>
+            </div>
         <div class= "cardContent">
             <h2>${producto.nombre}</h2>
             <h3>${producto.description}</h3>
-            <p>$${producto.precio}</p>
-            <button class= "cardContent-compra" id= "comprar"> Agregar al carrito</button>
-        </div>
-        <div class= "cardContainer">
-            <p class= "cardContainer-stock"> Stock : ${producto.stock} </p>
+            <p>$${producto.precio} <small>+ <span>Iva</span></small></p>
+            <div class = "cardContent-btns">
+                <button class= "cardContent-compra" id= "comprar"> Añadir</button>
+                <select class="cardContent-btn-opciones"></select>
+            </div>
         </div>
         `
 
-        containerProducto.appendChild(newCard)
+        containerProducto.appendChild(newCard);
+        /*--CREAR SELECCION DE COLORES--*/
+        const selectorColor = newCard.querySelector(".cardContent-btn-opciones");
+;
+
+        const defaultOptionColor = document.createElement("option");
+        defaultOptionColor.value = "";
+        defaultOptionColor.textContent = "Color";
+        defaultOptionColor.disabled = true;
+        defaultOptionColor.selected = true;
+        selectorColor.appendChild(defaultOptionColor);
+
+        producto.colores.forEach((color) => {
+            let option = document.createElement("option")
+            option.value = color;
+            option.textContent = color;
+            selectorColor.appendChild(option);
+        })
+
         newCard.querySelectorAll(".cardContent-compra")[0].addEventListener('click', () => {
             carrito.push({
                 id: producto.id,
@@ -244,18 +269,19 @@ function mostrarMensajeCarritoVacio() {
 /*--EVENTO CONTINUAR--*/
 
 const bntContinuar = document.getElementById('step0');
-function cambiarPagina(){
-bntContinuar.addEventListener('click', function(){
-    window.location.href = "entrega.html"
-})
+function cambiarPagina() {
+    bntContinuar.addEventListener('click', function () {
+        window.location.href = "entrega.html"
+    })
 }
 
-bntContinuar.addEventListener('click', function(){
+bntContinuar.addEventListener('click', function () {
     const productosGuardados = JSON.parse(localStorage.getItem("producto")) || [];
 
-    if(productosGuardados.length > 0){
+    if (productosGuardados.length > 0) {
         carrito.lenght = 0;
         carrito.push(productosGuardados);
         cambiarPagina()
     }
 })
+

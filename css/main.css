@@ -1020,14 +1020,22 @@ section .buscador:focus {
           box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
 }
 .card .cardImg {
-  width: 60%;
+  width: 45%;
   margin: 0.5rem 1rem;
+  overflow: hidden;
 }
 .card .cardImg img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   height: auto;
+}
+.card .cardImg span {
+  position: absolute;
+  left: 86%;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
 }
 .card .cardContent {
   display: block;
@@ -1039,42 +1047,68 @@ section .buscador:focus {
   font-size: 1.9rem;
   font-weight: bold;
   color: #333;
-  padding: 0 0 2rem 0rem;
+  margin: 1rem 1rem;
 }
 .card .cardContent h3 {
-  font-size: 1.4rem;
-  padding: 0 0 2rem 1rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
 }
 .card .cardContent p {
   font-size: 2.5rem;
   font-weight: bold;
   color: #070707;
-  padding: 0 0 3rem 1rem;
 }
-.card .cardContent .cardContent-compra {
-  width: 40%;
-  height: 52px;
+.card .cardContent p small {
+  font-size: 0.5rem;
+  margin: 0;
+}
+.card .cardContent p span {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.card .cardContent .cardContent-btns {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0;
+}
+.card .cardContent .cardContent-btns button {
+  width: 20%;
+  padding: 10px;
   font-size: 1.2rem;
   border-radius: 10px;
   border: none;
   background-color: brown;
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
           box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
-  margin: 0 0 1rem 1rem;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  color: white;
 }
-.card .cardContent .cardContent-compra:hover {
+.card .cardContent .cardContent-btns button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background-color: rgba(165, 42, 42, 0.445);
 }
-.card .cardContent .cardContent-compra:active {
+.card .cardContent .cardContent-btns button:active {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background-color: rgba(206, 206, 206, 0.13);
+}
+.card .cardContent .cardContent-btns .cardContent-btn-opciones {
+  margin: 0 1rem;
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 .card .cardContainer {
   display: block;
@@ -1115,10 +1149,4 @@ section .buscador:focus {
 }
 .card .cardContainer .containerCantidad span {
   font-size: 1rem;
-}
-.card .cardContainer .cardContainer-stock {
-  font-size: 15px;
-  position: absolute;
-  top: 15rem;
-  left: 4rem;
 }
