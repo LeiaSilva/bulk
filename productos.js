@@ -107,6 +107,11 @@ function crearCards(productos) {
         })
 
         newCard.querySelectorAll(".cardContent-compra")[0].addEventListener('click', () => {
+            const colorSeleccionado = selectorColor.value
+            if(!colorSeleccionado){
+                alert('no se ha seleccionado un color!')
+                return;
+            }
             carrito.push({
                 id: producto.id,
                 nombre: producto.nombre,
@@ -115,10 +120,14 @@ function crearCards(productos) {
                 precio: producto.precio,
                 codigo: producto.codigo,
                 img: producto.img,
+                colorSeleccionado: colorSeleccionado , 
+                cantidad : 1,
             });
-            agregarProductosCarrito(productos);
+            agregarProductosCarrito(productos , colorSeleccionado);
             agregarCarrito(producto);
             actualizarContadorCarrito();
+            actualizarTotalCompra();
+            localStorage.setItem("producto", JSON.stringify(carrito));
 
             /*--AGREGAR CARDS A CARRITO--*/
             function agregarProductosCarrito() {
@@ -140,8 +149,8 @@ function crearCards(productos) {
                         <img src= ${producto.img}>
                     </div>
                     <div class ="containerCarritoCards-content-names">
-                        <h2>${producto.nombre}</h2>
-                        <h4 class="containerCarritoCards-content-names-description">${producto.description}</h3>
+                        <h5>${producto.nombre}</h2>
+                        <h6 class="containerCarritoCards-content-names-description">${producto.description}, ${colorSeleccionado}</h6>
                         <p>$${producto.precio}</p>
                         <div class= "containerCantidad">
                             <button class="restar">-</button>
@@ -156,11 +165,13 @@ function crearCards(productos) {
                             <label for="${checkboxId}">Armado</label>
                         </div>
                     </div>
-                    `
+                    ` 
                     containerCarrito.appendChild(cardsCarrito);
                     carritoBtn();
                     agregarCantidadCarrito();
                     actualizarContadorCarrito();
+                    actualizarTotalCompra();
+
                 }
                 mostrarMensajeCarritoVacio()
             }
@@ -175,6 +186,7 @@ function carritoBtn() {
     const btnEliminarItem = document.querySelectorAll('.trash');
     btnEliminarItem.forEach((btn) => {
         btn.addEventListener('click', eliminarItemCarrito);
+        actualizarTotalCompra();
     });
 }
 function eliminarItemCarrito(event) {
@@ -190,6 +202,8 @@ function eliminarItemCarrito(event) {
         localStorage.setItem("producto", JSON.stringify(memoria));
 
         actualizarContadorCarrito();
+        actualizarTotalCompra();
+        
         mostrarMensajeCarritoVacio();
         if (memoria.length === 0) {
             const contadorCarrito = document.getElementById('contadorCarrito');
@@ -232,6 +246,7 @@ function sumarCantidad(event) {
 
     localStorage.setItem("producto", JSON.stringify(memoria));
     actualizarContadorCarrito();
+    actualizarTotalCompra();
 
 }
 function restarCantidad(event) {
@@ -252,6 +267,7 @@ function restarCantidad(event) {
 
         localStorage.setItem("producto", JSON.stringify(memoria));
         actualizarContadorCarrito();
+        actualizarTotalCompra();
     }
 }
 /*--TEXTO DE CARRITO VACIO--*/
@@ -285,3 +301,9 @@ bntContinuar.addEventListener('click', function () {
     }
 })
 
+/*--PRECIO TOTAL EN CARRITO--*/
+function actualizarTotalCompra() {
+    let memoria = JSON.parse(localStorage.getItem("producto")) || [];
+    let total = memoria.reduce((sum, producto) => sum + (producto.precio * producto.cantidad), 0);
+    document.getElementById("totalCompraCarrito").textContent = `Total: $${total.toFixed(2)}`;
+}

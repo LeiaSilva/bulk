@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class ="containerResumenCarrito-cards-content-names">
             <h2>${producto.nombre}</h2>
-            <h4>${producto.description}</h4>
+            <h4>${producto.description}, ${producto.colorSeleccionado}</h4>
             <p>$${producto.precio}</p>
             <div class= "containerCantidad">
                 <button class="restar">-</button>

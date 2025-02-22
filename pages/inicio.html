@@ -19,7 +19,7 @@
                 <a href="./inicio.html"><img src="../assets/logoBulk.jpg" alt="logo compañia Bulk"></a>
             </div>
             <ion-icon name="cart-outline" id="carrito"></ion-icon>
-            <span  class="contador oculto"id="contadorCarrito">0</span>
+            <span class="contador oculto" id="contadorCarrito">0</span>
         </nav>
         <!--MANU DESPLEGABLE-->
         <div class="containerMenu" id="menu">
@@ -45,11 +45,17 @@
         <div class="containerCarrito" id="carritoVentana">
             <ion-icon name="close-outline" id="closeCarrito"></ion-icon>
             <h2>Tus productos</h2>
+            <div class="containerCarritoCheck">
+                <input type="checkbox" name="armado" id="allArmado">
+                <label for="checkbox">Armado</label>
+            </div>
             <h3 id="textCarritoVacio">Tu carrito está vacio</h3>
             <div class="containerCarritoCards" id="containerCarritoCards">
             </div>
             <div class="containerCarritoBoton">
+                <P id="totalCompraCarrito"></P>
                 <button type="submit" id="step0">Continuar</button>
+                
             </div>
         </div>
     </header>
@@ -74,7 +80,7 @@
     <script src="../productos.js"></script>
     <script src="../menu.js"></script>
     <script src="../carrito.js"></script>
-  
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

@@ -599,7 +599,7 @@
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .navbar ion-icon:active {
-  border: 1px solid rgb(231, 231, 231);
+  outline: 1px solid rgb(231, 231, 231);
   border-radius: 50px;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
@@ -679,7 +679,7 @@
   cursor: pointer;
 }
 .containerMenu ion-icon:active {
-  border: 2px solid gray;
+  outline: 2px solid gray;
   border-radius: 20px;
 }
 .containerMenu ul {
@@ -785,6 +785,39 @@
   left: 28%;
   color: gray;
 }
+.containerCarrito .containerCarritoCheck {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 17%;
+  padding: 6px;
+  margin: 0 20rem;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.containerCarrito .containerCarritoCheck:active {
+  border: 1px solid rgb(231, 231, 231);
+  background-color: brown;
+  color: white;
+  border-radius: 50px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.containerCarrito .containerCarritoCheck:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: 1px solid rgb(231, 231, 231);
+  background-color: brown;
+  color: white;
+}
+.containerCarrito .containerCarritoCheck label {
+  overflow: hidden;
+}
 .containerCarrito .containerCarritoBoton {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -794,23 +827,27 @@
   bottom: 0;
   padding: 2rem;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
   z-index: 998;
 }
-.containerCarrito .containerCarritoBoton button {
-  position: relative;
-  right: 5%;
-  width: 50%;
-  padding: 10px;
-  font-size: 1rem;
-  background-color: white;
-  border: none;
+.containerCarrito .containerCarritoBoton p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  width: 100%;
 }
-.containerCarrito .containerCarritoBoton button a {
-  text-decoration: none;
-  color: black;
+.containerCarrito .containerCarritoBoton button {
+  margin-right: 3rem;
+  width: 35%;
+  height: 10%;
+  padding: 20px;
+  text-align: center;
+  border: none;
+  background-color: white;
+  border-radius: 8px;
 }
 .containerCarrito .containerCarritoCards {
   width: 100%;
@@ -852,42 +889,35 @@
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names {
   display: block;
-  padding-right: 60px;
   max-width: 50%;
 }
-.containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names h2 {
-  font-size: 1.2rem;
-  text-align: left;
+.containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names h5 {
+  text-align: start;
+  font-size: 1.1rem;
   margin: 0;
-  padding: 0.5rem 0 0 0;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .h4 {
-  font-size: 1.1rem;
-  text-align: left;
-  visibility: visible;
-  padding: 0.5rem 0;
+.containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names h6 {
+  text-align: start;
+  font-size: 0.8rem;
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names p {
   font-size: 1.2rem;
-  text-align: left;
-  padding: 0.5rem 4rem 1rem;
+  text-align: start;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad {
-  position: relative;
-  bottom: 0.4rem;
-  -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.2);
-          box-shadow: 0 8px 15px rgba(0, 0, 1, 0.2);
-  background-color: aliceblue;
+  margin: 0.5rem 0;
+  -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
+          box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
   border-radius: 18px;
+  border: 2px solid gray;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -898,16 +928,16 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 5rem;
-  padding: auto;
-  min-width: 50%;
-  max-width: 50%;
+  padding: 8px;
+  min-width: 65%;
+  max-width: 65%;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad button {
   z-index: 1;
-  width: 30%;
-  height: 32px;
-  background-color: brown;
+  width: 35%;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  height: auto;
   border: none;
   border-radius: 30px;
   font-size: 1rem;
@@ -915,6 +945,12 @@
   transition: -webkit-transform 2s ease, -webkit-box-shadow 0.1s ease;
   transition: transform 2s ease, box-shadow 0.1s ease;
   transition: transform 2s ease, box-shadow 0.1s ease, -webkit-transform 2s ease, -webkit-box-shadow 0.1s ease;
+}
+.containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad button:active {
+  outline: 2px solid gray;
+}
+.containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad button:hover {
+  outline: 2px solid gray;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad span {
   font-size: 1rem;
