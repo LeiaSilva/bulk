@@ -888,8 +888,11 @@
   height: auto;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names {
-  display: block;
   max-width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: hidden;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names h5 {
   text-align: start;
@@ -913,7 +916,7 @@
   white-space: nowrap;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad {
-  margin: 0.5rem 0;
+  margin: 0.5rem 3rem;
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
           box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
   border-radius: 18px;
@@ -922,15 +925,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 8px;
-  min-width: 65%;
-  max-width: 65%;
+  min-width: 80px;
+  max-width: 80px;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad button {
   z-index: 1;

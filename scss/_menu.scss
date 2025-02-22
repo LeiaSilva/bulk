@@ -286,8 +286,9 @@
             }
 
             .containerCarritoCards-content-names {
-                display: block;
                 max-width: 50%;
+                flex-grow: 1; 
+                overflow: hidden;
 
                 h5{
                     text-align: start;
@@ -314,17 +315,16 @@
 
                 }
                 .containerCantidad{
-                    margin: .5rem 0;
+                    margin: .5rem 3rem;
                     box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
                     border-radius: 18px;
                     border: 2px solid gray;
                     overflow: hidden;
                     display: flex;
-                    align-items: center;
                     justify-content: space-between;
                     padding: 8px;
-                    min-width: 65%;
-                    max-width: 65%;
+                    min-width: 80px;
+                    max-width: 80px;
                     button{
                         z-index: 1;
                         width: 35%;
