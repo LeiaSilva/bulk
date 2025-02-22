@@ -128,7 +128,8 @@
 
         .entregaContainer-form-buttons {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            overflow: hidden;
 
             .nextStep {
                 width: 15%;

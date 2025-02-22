@@ -83,6 +83,7 @@ if (btnFinalizar) {
 
         localStorage.removeItem('producto'); 
         localStorage.removeItem('contadorCarrito');
+        localStorage.removeItem('deliveryDetails');
 
         window.location.href = "inicio.html";
     });
