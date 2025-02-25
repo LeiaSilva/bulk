@@ -109,7 +109,12 @@ function crearCards(productos) {
         newCard.querySelectorAll(".cardContent-compra")[0].addEventListener('click', () => {
             const colorSeleccionado = selectorColor.value
             if(!colorSeleccionado){
-                alert('no se ha seleccionado un color!')
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "No has seleccionado un color!",
+                    confirmButtonText: 'Entendido',
+                  });
                 return;
             }
             carrito.push({
