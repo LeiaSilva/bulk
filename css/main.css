@@ -652,15 +652,8 @@
   width: 50%;
   height: 100%;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  display: block;
+  padding-top: 8rem;
   border-right: 2px solid rgba(0, 0, 0, 0.1);
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
@@ -674,12 +667,12 @@
 .containerMenu ion-icon {
   font-size: 1.5rem;
   position: relative;
-  left: 94%;
-  bottom: 1%;
+  left: 24.5rem;
+  bottom: 3rem;
   cursor: pointer;
 }
 .containerMenu ion-icon:active {
-  outline: 2px solid gray;
+  outline: 1px solid brown;
   border-radius: 20px;
 }
 .containerMenu ul {
@@ -688,8 +681,8 @@
 .containerMenu ul li {
   border-bottom: 2px solid rgb(224, 41, 41);
   font-size: 1.2rem;
-  margin: 15px;
-  padding: 20px;
+  padding: 3rem;
+  margin: 0 1rem;
   -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
   transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -716,11 +709,20 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 1rem;
-  padding: 10px;
+  margin-top: 10rem;
+  padding: 1rem;
+}
+.containerMenu .containerMenu-checkboxs div {
+  outline: 1px solid gray;
+  padding: 5px;
+  border-radius: 90px;
 }
 .containerMenu .containerMenu-checkboxs div label {
   font-size: 1.2rem;
+}
+.containerMenu .containerMenu-checkboxs div:active {
+  outline: 1px solid brown;
+  background-color: brown;
 }
 
 /*-- Muestra el menu--*/
@@ -758,14 +760,14 @@
   overflow: hidden;
   /*--CARDS EN CARRITO--*/
 }
-.containerCarrito ion-icon {
+.containerCarrito .containerCarritoBtnClose {
   font-size: 1.5rem;
   position: relative;
-  top: 9%;
+  top: 5rem;
   cursor: pointer;
 }
-.containerCarrito ion-icon:active {
-  border: 2px solid gray;
+.containerCarrito .containerCarritoBtnClose:active {
+  outline: 2px solid brown;
   border-radius: 20px;
 }
 .containerCarrito h2 {
@@ -789,11 +791,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid gray;
+  outline: 1px solid gray;
   border-radius: 15px;
   width: 17%;
   padding: 6px;
-  margin: 0 20rem;
+  margin: 0 1rem;
   text-align: center;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
@@ -801,17 +803,12 @@
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .containerCarrito .containerCarritoCheck:active {
-  border: 1px solid rgb(231, 231, 231);
+  outline: 1px solid brown;
   background-color: brown;
   color: white;
-  border-radius: 50px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 .containerCarrito .containerCarritoCheck:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  border: 1px solid rgb(231, 231, 231);
+  outline: 1px solid brown;
   background-color: brown;
   color: white;
 }
@@ -861,7 +858,7 @@
   background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
           box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
-  border: 1px gray;
+  outline: 1px gray;
   width: 95%;
   height: auto;
   min-height: 100px;
@@ -920,7 +917,7 @@
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
           box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
   border-radius: 18px;
-  border: 2px solid gray;
+  outline: 1px solid gray;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -947,10 +944,10 @@
   transition: transform 2s ease, box-shadow 0.1s ease, -webkit-transform 2s ease, -webkit-box-shadow 0.1s ease;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad button:active {
-  outline: 2px solid gray;
+  outline: 2px solid brown;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad button:hover {
-  outline: 2px solid gray;
+  outline: 2px solid brown;
 }
 .containerCarrito .containerCarritoCards .containerCarritoCards-content .containerCarritoCards-content-names .containerCantidad span {
   font-size: 1rem;
@@ -1067,8 +1064,8 @@ section .buscador:focus {
   height: auto;
 }
 .card .cardImg span {
-  position: absolute;
-  left: 86%;
+  position: relative;
+  left: 42%;
   font-size: 1.1rem;
   text-align: center;
   font-weight: bold;
@@ -1095,7 +1092,7 @@ section .buscador:focus {
   color: #070707;
 }
 .card .cardContent p small {
-  font-size: 0.5rem;
+  font-size: 1rem;
   margin: 0;
 }
 .card .cardContent p span {

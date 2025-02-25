@@ -79,7 +79,7 @@ function crearCards(productos) {
         <div class= "cardContent">
             <h2>${producto.nombre}</h2>
             <h3>${producto.description}</h3>
-            <p>$${producto.precio} <small>+ <span>Iva</span></small></p>
+            <p>$${producto.precio} <small>+ <span>IVA</span></small></p>
             <div class = "cardContent-btns">
                 <button class= "cardContent-compra" id= "comprar"> Añadir</button>
                 <select class="cardContent-btn-opciones"></select>
