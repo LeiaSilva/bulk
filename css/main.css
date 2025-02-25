@@ -664,14 +664,14 @@
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   overflow: hidden;
 }
-.containerMenu ion-icon {
+.containerMenu .containerMenuPerfilClose {
   font-size: 1.5rem;
   position: relative;
-  left: 24.5rem;
+  left: 95%;
   bottom: 3rem;
   cursor: pointer;
 }
-.containerMenu ion-icon:active {
+.containerMenu .containerMenuPerfilClose:active {
   outline: 1px solid brown;
   border-radius: 20px;
 }
@@ -709,7 +709,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 10rem;
+  margin-top: 9rem;
   padding: 1rem;
 }
 .containerMenu .containerMenu-checkboxs div {
@@ -723,6 +723,7 @@
 .containerMenu .containerMenu-checkboxs div:active {
   outline: 1px solid brown;
   background-color: brown;
+  color: white;
 }
 
 /*-- Muestra el menu--*/
@@ -772,19 +773,23 @@
 }
 .containerCarrito h2 {
   font-size: 1.8rem;
+  text-align: center;
   margin-top: 4rem;
-  padding: 10px 5px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  position: relative;
-  left: 30%;
+  overflow: hidden;
+  border-bottom: 1px solid gray;
 }
 .containerCarrito #textCarritoVacio {
   font-size: 1.8rem;
   position: absolute;
-  bottom: 50%;
-  left: 28%;
+  bottom: 35rem;
+  left: 6rem;
   color: gray;
 }
 .containerCarrito .containerCarritoCheck {
@@ -793,7 +798,8 @@
   display: flex;
   outline: 1px solid gray;
   border-radius: 15px;
-  width: 17%;
+  max-width: 5rem;
+  min-width: 5rem;
   padding: 6px;
   margin: 0 1rem;
   text-align: center;
@@ -813,7 +819,8 @@
   color: white;
 }
 .containerCarrito .containerCarritoCheck label {
-  overflow: hidden;
+  overflow: visible;
+  margin: 0 2px;
 }
 .containerCarrito .containerCarritoBoton {
   display: -webkit-box;
@@ -1008,7 +1015,7 @@ section .buscador {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  width: 55%;
   background-color: rgb(255, 255, 255);
   border: 2px solid rgba(0, 0, 0, 0.1);
   margin: 0 25%;
@@ -1032,6 +1039,7 @@ section .buscador input:focus {
 section .buscador i {
   font-size: 25px;
   margin: 3%;
+  cursor: pointer;
 }
 section .buscador:focus {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
@@ -1047,7 +1055,7 @@ section .buscador:focus {
       -ms-flex-align: center;
           align-items: center;
   width: 95%;
-  margin: 1.5rem;
+  margin: 1.6rem;
   overflow: hidden;
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
           box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
