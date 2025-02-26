@@ -461,7 +461,7 @@
   outline: 1px solid gray;
   position: absolute;
   top: 8.5rem;
-  left: 20rem;
+  left: 21rem;
   width: 80%;
   max-width: 150px;
   height: auto;
@@ -504,7 +504,7 @@
   z-index: 100;
   bottom: 2.5rem;
   left: 37rem;
-  opacity: 1;
+  opacity: 0;
   font-size: 22px;
 }
 
