@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*-------------GLOBALES-------------------*/
 * {
   margin: 0;
@@ -423,16 +424,25 @@
 }
 
 /*--VALIDACION FORM--*/
+body {
+  background-color: rgb(204, 20, 44);
+}
+
 .loginContainer {
-  background-color: rgb(151, 27, 27);
-  width: 90%;
-  margin: 1.5rem auto;
-  margin-top: 5rem;
+  background-color: white;
+  max-width: 80%;
+  min-width: 80%;
+  max-height: 35rem;
+  min-height: 35rem;
+  border-radius: 30px;
+  margin: 15rem 4.5rem;
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
           box-shadow: 0 8px 15px rgba(0, 0, 1, 0.3);
+  outline: 1px solid gray;
 }
 
 .loginForm {
+  overflow: hidden;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -441,10 +451,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-y: hidden;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 1rem;
 }
 
 .loginForm img {
+  outline: 1px solid gray;
+  position: absolute;
+  top: 8.5rem;
+  left: 20rem;
   width: 80%;
   max-width: 150px;
   height: auto;
@@ -453,35 +470,41 @@
 }
 
 .loginForm-container {
-  margin: 1rem;
-  padding-right: 10px;
+  overflow: hidden;
+  position: relative;
+  top: 5rem;
+  margin: 2rem 0;
 }
 
 .loginForm-container input {
-  width: 100%;
-  height: 2.3rem;
+  background-color: rgba(228, 224, 224, 0.897);
+  outline: 2px solid gray;
+  margin: 10px 15px;
+  width: 90%;
   border-radius: 10px;
+  padding: 10px;
   font-size: 1rem;
   border: none;
 }
 
 .loginForm-container input:focus {
-  border: 3px solid rgb(24, 99, 240);
-  outline: none;
+  outline: 2px solid rgb(24, 99, 240);
   -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
           box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
 }
 
 .loginForm-container label {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 15px;
 }
 
 .loginForm-container i {
   position: relative;
   z-index: 100;
-  bottom: 2rem;
-  left: 92%;
-  opacity: 0;
+  bottom: 2.5rem;
+  left: 37rem;
+  opacity: 1;
   font-size: 22px;
 }
 
@@ -497,13 +520,11 @@
 }
 
 .loginForm button {
-  margin: 1rem auto;
-  width: 70%;
+  margin: 2rem auto;
+  width: 50%;
   height: 50px;
   border-radius: 15px;
   font-size: 17px;
-  position: relative;
-  bottom: 2rem;
   overflow: hidden;
   border: none;
 }
@@ -539,11 +560,11 @@
 }
 
 .loginForm-incorrecto input {
-  border: 3px solid red;
+  outline: 3px solid red;
 }
 
 .loginForm-incorrecto input:focus {
-  border: 3px solid red;
+  outline: 3px solid red;
 }
 
 .loginAdv-activo {
@@ -552,6 +573,37 @@
   transition: opacity 0.3s ease;
 }
 
+@media screen and (min-width: 850px) {
+  .loginContainer {
+    margin: 8rem 4.5rem;
+    overflow: hidden;
+  }
+  .loginForm img {
+    position: absolute;
+    top: 2rem;
+    left: 30rem;
+  }
+  .loginContainer {
+    max-width: 500px; /* 🔹 Ajuste para mantener el tamaño adecuado */
+    padding: 3rem;
+  }
+  .loginForm button {
+    margin: 5rem auto;
+  }
+  .loginAdv {
+    font-size: 1rem;
+    color: rgb(255, 0, 0);
+    position: relative;
+    bottom: 0rem;
+  }
+  .loginForm-container i {
+    position: relative;
+    z-index: 100;
+    bottom: -0.5rem;
+    left: -3rem;
+    font-size: 1.5rem;
+  }
+}
 .navbar {
   position: fixed;
   z-index: 1000;
