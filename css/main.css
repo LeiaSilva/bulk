@@ -370,6 +370,23 @@
   -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
           box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
 }
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .lugarEntregaContainer {
+  padding: 5px;
+  margin: 12px 1px;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .lugarEntregaContainer .selectBoxEntrega {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgb(230, 229, 229);
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .lugarEntregaContainer .selectBoxEntrega:focus {
+  border: 3px solid rgb(24, 99, 240);
+  outline: none;
+  -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+          box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+}
 .entregaContainer .entregaContainer-form .entregaContainer-form-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -396,28 +413,6 @@
   background-color: #4CAF50;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-buttons .nextStep:active {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  background-color: rgba(206, 206, 206, 0.13);
-}
-.entregaContainer .entregaContainer-form .prevStep {
-  width: 15%;
-  padding: 15px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 8px;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-}
-.entregaContainer .entregaContainer-form .prevStep:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  background-color: #4CAF50;
-}
-.entregaContainer .entregaContainer-form .prevStep:active {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background-color: rgba(206, 206, 206, 0.13);

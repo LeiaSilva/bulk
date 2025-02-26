@@ -37,27 +37,25 @@ function nextStep() {
     }
     return false;
 }
-
 function prevStep() {
-    if (currentStep <= 1) {
-        window.location.href = "inicio.html";
-        return;
+    if (currentStep > 1) {
+        currentStep--;
+        localStorage.setItem('currentStep', currentStep);
+        showStep(currentStep);
+        window.location.href = "entrega.html";
     }
-    
-    currentStep--;
-    localStorage.setItem('currentStep', currentStep);
-    
-    // Determinar la página anterior basado en el currentStep
-    const pages = ["inicio.html", "entrega.html", "resumen.html"];
-    window.location.href = pages[currentStep - 1];
 }
 
-/*--EVENTO DE ATRÁS --*/
-window.addEventListener("popstate", function() {
-    if (currentStep > 1) {
-        prevStep();
-    }
-});
+
+// Bloquear retroceso
+function bloquearRetroceso() {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.pushState(null, null, location.href);
+    };
+}
+
+bloquearRetroceso();
 
 /*--FORMULARIO--*/
 const clientes = [
@@ -104,7 +102,40 @@ function createSelectBox() {
 
     select.addEventListener('change', () => validarSelect(select));
 }
+/*--SELECT DE LUGAR DE ENTREGA--*/
+function createLugarEntregaSelect() {
+    const lugarEntregaContainer = document.getElementById('lugarEntregaContainer');
+    if (!lugarEntregaContainer) return;
 
+    const select = document.createElement('select');
+    select.classList.add('selectBoxEntrega');
+    select.setAttribute('name', 'lugarEntrega');
+    select.setAttribute('id', 'lugarEntrega');
+
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "Selecciona un lugar de entrega";
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    select.appendChild(defaultOption);
+
+    clientes.forEach(cliente => {
+        const option = document.createElement('option');
+        option.value = cliente.direccion;
+        option.textContent = cliente.direccion;
+        select.appendChild(option);
+    });
+
+    lugarEntregaContainer.appendChild(select);
+
+    const savedData = JSON.parse(localStorage.getItem('deliveryDetails'));
+    if (savedData && savedData.lugarEntrega) {
+        select.value = savedData.lugarEntrega;
+        validarSelect(select);
+    }
+
+    select.addEventListener('change', () => validarSelect(select));
+}
 /*--VALIDAR FORMULARIO--*/
 const formEntregas = document.getElementById('entregas');
 const expresion = {
@@ -165,7 +196,7 @@ if (formEntregas) {
         e.preventDefault();
 
         const inputs = document.querySelectorAll('#entregas input');
-        const select = document.querySelector('#clienteContainer .selectBox');
+        const selectCliente = document.querySelector('#clienteContainer .selectBox');
         let formularioValido = true;
 
         inputs.forEach(input => {
@@ -173,18 +204,23 @@ if (formEntregas) {
                 formularioValido = false;
             }
         });
-
-        if (!validarSelect(select)) {
+        const selectLugarEntrega = document.getElementById('lugarEntrega');
+    
+        if (!validarSelect(selectCliente)) {
             formularioValido = false;
+            console.error("Cliente no seleccionado");
         }
-
+        
+        if (!validarSelect(selectLugarEntrega)) {
+            formularioValido = false;
+            console.error("Lugar de entrega no seleccionado");
+        }
+    
         if (formularioValido) {
             const deliveryDetails = {
-                cliente: select.value,
-                transportista: document.getElementById('transportista').value,
-                lugarEntrega: document.getElementById('lugarEntrega').value
+                cliente: selectCliente.value,
+                lugarEntrega: selectLugarEntrega.value
             };
-
             localStorage.setItem('deliveryDetails', JSON.stringify(deliveryDetails));
             
             if (nextStep()) {
@@ -197,6 +233,7 @@ if (formEntregas) {
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
     createSelectBox();
+    createLugarEntregaSelect();
     showStep(currentStep);
 });
 
@@ -217,3 +254,4 @@ function actualizarContadorCarrito() {
 }
 
 actualizarContadorCarrito();
+/*--SELECTOR DE LUGAR DE ENTREGA--*/

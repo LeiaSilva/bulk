@@ -124,6 +124,23 @@
                     }
                 }
             }
+            .lugarEntregaContainer{
+                padding: 5px;
+                margin: 12px 1px;
+                .selectBoxEntrega{
+                    width: 100%;
+                    padding: 15px;
+                    border: none;
+                    font-size: 1rem;
+                    background-color: rgb(230, 229, 229);
+                    &:focus {
+                        border: 3px solid rgb(24, 99, 240);
+                        outline: none;
+                        box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
+                    }
+                }
+
+            }
         }
 
         .entregaContainer-form-buttons {
@@ -150,27 +167,6 @@
                     background-color: rgba(206, 206, 206, 0.13);
                 }
             }
-        }
-        .prevStep {
-            width: 15%;
-            padding: 15px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.1);
-                background-color: #4CAF50;
-            }
-
-            &:active {
-                transform: scale(1.1);
-                background-color: rgba(206, 206, 206, 0.13);
-            }
-
-
         }
     }
 }
