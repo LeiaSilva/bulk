@@ -151,7 +151,7 @@ function validarCampo(input) {
     
     const isValid = expresion.text.test(input.value.trim());
     
-    input.style.border = isValid ? "3px solid rgb(24, 99, 240)" : "3px solid red";
+    input.style.outline = isValid ? "3px solid rgb(24, 99, 240)" : "3px solid red";
     
     if (errorMensaje) {
         errorMensaje.classList.toggle('entregasAdv-activo', !isValid);
@@ -171,7 +171,7 @@ function validarCampo(input) {
 function validarSelect(select) {
     if (!select) return false;
     const isValid = select.value !== "";
-    select.style.border = isValid ? "3px solid rgb(24, 99, 240)" : "3px solid red";
+    select.style.outline = isValid ? "3px solid rgb(24, 99, 240)" : "3px solid red";
     return isValid;
 }
 

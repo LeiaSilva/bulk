@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
     <link rel="stylesheet" href="../css/main.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <header>
         <nav class="navbar" id="navbar">
             <!--ELEMENTOS VISUALES-->
             <ion-icon name="person-outline" id="perfil"></ion-icon>
             <div class="navbarContainer-logo">
-            <img src="../assets/logoBulk.jpg" alt="logo compañia Bulk">
+                <img src="../assets/box.png" alt="logo compañia Bulk">
             </div>
             <ion-icon name="cart-outline" id="carrito"></ion-icon>
         </nav>
@@ -22,35 +24,42 @@
     <main>
         <!--BARRA PROGRESO-->
         <section class="containerProgress" id="progress">
-            <div class="step" ><ion-icon name="cart-outline"></ion-icon></div>
-            <div class="progressLine" ></div>
+            <div class="step"><ion-icon name="cart-outline"></ion-icon></div>
+            <div class="progressLine"></div>
             <div class="step"><i class='bx bxs-truck'></i></div>
-            <div class="progressLine" ></div>
+            <div class="progressLine"></div>
             <div class="step"><i class='bx bx-notepad'></i></div>
         </section>
         <!--FORMULARIO ENTREGA-->
         <section class="entregaContainer">
             <form action="#" id="entregas" class="entregaContainer-form">
-                <div class="entregaContainer-form-inputs" >
-                    <div class="clienteContainer" id="clienteContainer" name ="cliente"></div>
-                    <p class="entregasAdv" >Este campo debe estar completo.</p>
+                <div class="entregaContainer-form-inputs">
+                    <div class="clienteContainer" id="clienteContainer" name="cliente"></div>
                 </div>
                 <div class="entregaContainer-form-inputs" id="transportistaContainer">
-                    <label for="text">Transportista</label>
-                    <input type="text" placeholder="Nombre del transportista" name="transportista" id="transportista">
-                    <i class='bx bxs-x-circle entregaValidacion'></i>
-                    <p class="entregasAdv" >Este campo debe estar completo.</p>
+                    <div class="inputsTypeText">
+                        <label for="text">Transportista</label>
+                        <input type="text" placeholder="Nombre del transportista" name="transportista"
+                            id="transportista">
+                    </div>
                 </div>
                 <div class="entregaContainer-form-inputs">
                     <div class="lugarEntregaContainer" id="lugarEntregaContainer">
                     </div>
+                </div>
+                <div class="entregaContainer-form-inputs">
+                    <div class="inputsTypeText">
+                        <label for="text">Observaciones</label>
+                        <input class="inputObs" type="text" placeholder="Agrega un comentario a tu venta" name="observaciones" id="observaciones">
+                    </div>
+
                 </div>
                 <div class="entregaContainer-form-buttons">
                     <button type="submit" class="nextStep" id="btnContinuar">Continuar</button>
                 </div>
             </form>
         </section>
-    
+
 
     </main>
 
@@ -60,4 +69,5 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

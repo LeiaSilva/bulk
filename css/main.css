@@ -288,15 +288,12 @@
 
 /*--FORMULARIO ENTREGA--*/
 .entregaContainer {
-  width: 95%;
-  height: 50rem;
   overflow: hidden;
 }
 .entregaContainer .entregaContainer-form {
   background-color: rgb(251, 253, 253);
-  width: 95%;
-  height: 95%;
-  margin: 1rem 2rem;
+  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -305,53 +302,41 @@
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
+  margin: 0 5px 0 5px;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs {
-  margin: 50px 1px;
-  padding: 5px;
+  margin: 25px 1px;
+  padding: 2px;
   border-bottom: 1px solid gray;
   overflow: hidden;
 }
-.entregaContainer .entregaContainer-form .entregaContainer-form-inputs label {
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .inputsTypeText {
+  text-align: start;
+  margin: 12px 1px;
+  padding: 5px;
+}
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .inputsTypeText label {
   font-size: 1.5rem;
-  margin: 0 4px;
   position: relative;
   bottom: 5%;
 }
-.entregaContainer .entregaContainer-form .entregaContainer-form-inputs input {
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .inputsTypeText input {
   font-size: 1.1rem;
-  width: 93.5%;
-  padding: 15px;
+  width: 97%;
+  padding: 10px;
   border-radius: 0px;
-  margin: 0 4px 0 4px;
+  border-style: none;
+  outline: 2px solid gray;
 }
-.entregaContainer .entregaContainer-form .entregaContainer-form-inputs input:focus {
-  border: 3px solid rgb(24, 99, 240);
-  outline: none;
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .inputsTypeText input:focus {
+  outline: 3px solid rgb(24, 99, 240);
   -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
           box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
 }
-.entregaContainer .entregaContainer-form .entregaContainer-form-inputs input:active {
-  border: 3px solid rgb(24, 99, 240);
-  outline: none;
+.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .inputsTypeText input:active {
+  outline: 3px solid rgb(24, 99, 240);
   -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
           box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
-}
-.entregaContainer .entregaContainer-form .entregaContainer-form-inputs .entregasAdv {
-  font-size: 1rem;
-  color: red;
-  text-align: center;
-  position: relative;
-  bottom: 0rem;
-  opacity: 0;
-}
-.entregaContainer .entregaContainer-form .entregaContainer-form-inputs i {
-  position: relative;
-  right: 3rem;
-  bottom: -0.2rem;
-  font-size: 1.4rem;
-  color: red;
-  opacity: 0;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer {
   margin: 12px 1px;
@@ -365,8 +350,7 @@
   background-color: rgb(230, 229, 229);
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .clienteContainer .selectBox:focus {
-  border: 3px solid rgb(24, 99, 240);
-  outline: none;
+  outline: 3px solid rgb(24, 99, 240);
   -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
           box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
 }
@@ -382,8 +366,7 @@
   background-color: rgb(230, 229, 229);
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .lugarEntregaContainer .selectBoxEntrega:focus {
-  border: 3px solid rgb(24, 99, 240);
-  outline: none;
+  outline: 3px solid rgb(24, 99, 240);
   -webkit-box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
           box-shadow: 0.5px 0px 0.5px rgb(0, 0, 0);
 }
@@ -396,7 +379,7 @@
   overflow: hidden;
 }
 .entregaContainer .entregaContainer-form .entregaContainer-form-buttons .nextStep {
-  width: 15%;
+  width: 15rem;
   padding: 15px;
   border: none;
   background-color: brown;
