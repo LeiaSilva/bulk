@@ -194,7 +194,7 @@
 }
 .containerResumenBtns .btnFinalizar {
   padding: 15px;
-  width: 30%;
+  width: 30rem;
   background-color: brown;
   border: 2px solid brown;
   font-size: 1.1rem;
@@ -218,7 +218,7 @@
 }
 .containerResumenBtns .prevStepResumen {
   padding: 15px;
-  width: 30%;
+  width: 25rem;
   background-color: green;
   border: 2px solid green;
   font-size: 1.1rem;

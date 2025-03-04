@@ -8,15 +8,15 @@ let currentStep = parseInt(localStorage.getItem('currentStep')) || 1;
 function showStep(step) {
     steps.forEach((indicator, index) => {
         indicator.classList.remove('active', 'completed');
-        
+
         if (index === 0) {
             indicator.classList.add('completed');
         }
-        
+
         if (index < step) {
             indicator.classList.add('completed');
         }
-        
+
         if (index === step) {
             indicator.classList.add('active');
         }
@@ -45,7 +45,6 @@ function prevStep() {
         window.location.href = "entrega.html";
     }
 }
-
 
 // Bloquear retroceso
 function bloquearRetroceso() {
@@ -102,6 +101,7 @@ function createSelectBox() {
 
     select.addEventListener('change', () => validarSelect(select));
 }
+
 /*--SELECT DE LUGAR DE ENTREGA--*/
 function createLugarEntregaSelect() {
     const lugarEntregaContainer = document.getElementById('lugarEntregaContainer');
@@ -136,37 +136,9 @@ function createLugarEntregaSelect() {
 
     select.addEventListener('change', () => validarSelect(select));
 }
+
 /*--VALIDAR FORMULARIO--*/
 const formEntregas = document.getElementById('entregas');
-const expresion = {
-    text: /^[a-zA-Z0-9\s]{3,50}$/
-};
-
-function validarCampo(input) {
-    const container = input.closest('.entregaContainer-form-inputs');
-    if (!container) return false;
-
-    const errorMensaje = container.querySelector('.entregasAdv');
-    const icono = container.querySelector('i');
-    
-    const isValid = expresion.text.test(input.value.trim());
-    
-    input.style.outline = isValid ? "3px solid rgb(24, 99, 240)" : "3px solid red";
-    
-    if (errorMensaje) {
-        errorMensaje.classList.toggle('entregasAdv-activo', !isValid);
-        errorMensaje.style.opacity = isValid ? '0' : '1';
-    }
-    
-    if (icono) {
-        icono.classList.toggle('bxs-check-circle', isValid);
-        icono.classList.toggle('bxs-x-circle', !isValid);
-        icono.style.opacity = '1';
-        icono.style.color = isValid ? 'green' : 'red';
-    }
-    
-    return isValid;
-}
 
 function validarSelect(select) {
     if (!select) return false;
@@ -177,35 +149,30 @@ function validarSelect(select) {
 
 // Inicializar validación de campos
 if (formEntregas) {
-    const inputs = formEntregas.querySelectorAll('input');
-    
+    const inputs = formEntregas.querySelectorAll('input, textarea');
+
     inputs.forEach(input => {
         // Restaurar valores previos si existen
         const savedData = JSON.parse(localStorage.getItem('deliveryDetails'));
         if (savedData && savedData[input.name]) {
             input.value = savedData[input.name];
-            validarCampo(input);
         }
 
-        input.addEventListener('input', () => validarCampo(input));
-        input.addEventListener('blur', () => validarCampo(input));
+        input.addEventListener('input', () => {
+            const deliveryDetails = JSON.parse(localStorage.getItem('deliveryDetails')) || {};
+            deliveryDetails[input.name] = input.value;
+            localStorage.setItem('deliveryDetails', JSON.stringify(deliveryDetails));
+        });
     });
 
     /*--EVENTO CONTINUAR--*/
     formEntregas.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const inputs = document.querySelectorAll('#entregas input');
         const selectCliente = document.querySelector('#clienteContainer .selectBox');
+        const selectLugarEntrega = document.getElementById('lugarEntrega');
         let formularioValido = true;
 
-        inputs.forEach(input => {
-            if (!validarCampo(input)) {
-                formularioValido = false;
-            }
-        });
-        const selectLugarEntrega = document.getElementById('lugarEntrega');
-    
         if (!validarSelect(selectCliente)) {
             formularioValido = false;
             console.error("Cliente no seleccionado");
@@ -215,12 +182,11 @@ if (formEntregas) {
             formularioValido = false;
             console.error("Lugar de entrega no seleccionado");
         }
-    
+
         if (formularioValido) {
-            const deliveryDetails = {
-                cliente: selectCliente.value,
-                lugarEntrega: selectLugarEntrega.value
-            };
+            const deliveryDetails = JSON.parse(localStorage.getItem('deliveryDetails')) || {};
+            deliveryDetails.cliente = selectCliente.value;
+            deliveryDetails.lugarEntrega = selectLugarEntrega.value;
             localStorage.setItem('deliveryDetails', JSON.stringify(deliveryDetails));
             
             if (nextStep()) {
@@ -254,4 +220,3 @@ function actualizarContadorCarrito() {
 }
 
 actualizarContadorCarrito();
-/*--SELECTOR DE LUGAR DE ENTREGA--*/
