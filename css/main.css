@@ -167,7 +167,12 @@
   background-color: rgba(206, 206, 206, 0.13);
 }
 
-/*--VALIDACION FORM--*/
+/*--MEDIA QUERY: CELULAR--*/
+@media screen and (max-width: 650px) {
+  .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .inputsTypeText input {
+    width: 94%;
+  }
+}
 .containerResumenTitulo {
   font-size: 3rem;
   text-align: center;
@@ -403,7 +408,7 @@
   background-color: rgba(206, 206, 206, 0.13);
 }
 
-/*--MEDIA QUERY: TABLET HORIZONTAL--*/
+/*--MEDIA QUERY: CELULAR--*/
 @media screen and (max-width: 650px) {
   .containerProgress {
     gap: 15px;

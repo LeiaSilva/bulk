@@ -153,4 +153,9 @@
     }
 }
 
-/*--VALIDACION FORM--*/
+/*--MEDIA QUERY: CELULAR--*/
+@media screen and (max-width: 650px){
+    .entregaContainer .entregaContainer-form .entregaContainer-form-inputs .inputsTypeText input {
+        width: 94%;
+    }
+}
