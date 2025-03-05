@@ -63,14 +63,16 @@
 }
 
 /*--CONTADOR VISIBILIDAD--*/
-.oculto{
+.oculto {
     visibility: hidden;
     transition: opacity 0.3s ease;
 }
-.visible{
+
+.visible {
     visibility: visible;
     transition: opacity 0.3s ease;
 }
+
 /*---Menu desplegable---*/
 .containerMenu {
     position: fixed;
@@ -80,7 +82,9 @@
     width: 50%;
     height: 100%;
     left: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
     padding-top: 8rem;
     border-right: 2px solid rgba(0, 0, 0, 0.1);
     transform: translateX(-100%);
@@ -133,17 +137,20 @@
     .containerMenu-checkboxs {
         display: flex;
         justify-content: space-between;
-        margin-top: 8rem;
+        margin-top: 0rem;
         padding: 1rem;
         overflow: hidden;
+
         div {
             outline: 1px solid gray;
             padding: 5px;
             border-radius: 90px;
+
             label {
                 font-size: 1.2rem;
             }
-            &:active{
+
+            &:active {
                 outline: 1px solid brown;
                 background-color: brown;
                 color: white;
@@ -175,7 +182,7 @@
     transition: transform 0.5s ease;
     overflow: hidden;
 
-    .containerCarritoBtnClose{
+    .containerCarritoBtnClose {
         font-size: 1.5rem;
         position: relative;
         top: 5rem;
@@ -193,11 +200,11 @@
         margin-top: 4rem;
         margin-right: 2rem;
         margin-left: 2rem;
-        margin-bottom:1rem ;
+        margin-bottom: 1rem;
         padding: .5rem;
         height: fit-content;
         overflow: hidden;
-        border-bottom: 1px solid gray ;
+        border-bottom: 1px solid gray;
     }
 
     #textCarritoVacio {
@@ -207,7 +214,8 @@
         left: 4rem;
         color: gray;
     }
-    .containerCarritoCheck{
+
+    .containerCarritoCheck {
         display: flex;
         outline: 1px solid gray;
         border-radius: 15px;
@@ -229,7 +237,8 @@
             background-color: brown;
             color: white;
         }
-        label{
+
+        label {
             overflow: visible;
             margin: 0 2px;
         }
@@ -242,26 +251,34 @@
         position: fixed;
         bottom: 0;
         padding: 2rem;
-        width: 100%;
+        width: 90%;
         justify-content: space-between;
-        gap: 2rem;
         z-index: 998;
-        
-        p{
-            font-size: 2rem;
+        gap: 20px;
+
+        p {
+            font-size: 1.8rem;
+            margin: 0;
             font-weight: bold;
-            margin-right: 1rem;
-            width: 100%;
+            flex: 2;
         }
+
         button {
-            margin-right: 4rem;
-            width: 35%;
-            height: 10%;
-            padding: 18px;
-            justify-content: center;
+            flex: 1;
             border: none;
+            height: 3rem;
             background-color: white;
             border-radius: 8px;
+            margin-right: 2rem;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                background-color: rgba(206, 206, 206, 0.13);
+            }
+
+            &:active {
+                background-color: rgba(206, 206, 206, 0.13);
+            }
         }
     }
 
@@ -285,6 +302,7 @@
             align-items: center;
             margin: 5px 10px;
             padding: 10px;
+
             .containerCarritoCards-content-img {
                 width: 15%;
                 height: auto;
@@ -298,10 +316,10 @@
 
             .containerCarritoCards-content-names {
                 max-width: 50%;
-                flex-grow: 1; 
+                flex-grow: 1;
                 overflow: hidden;
 
-                h5{
+                h5 {
                     text-align: start;
                     font-size: 1.1rem;
                     margin: 0;
@@ -317,7 +335,8 @@
                     white-space: nowrap;
 
                 }
-                p{
+
+                p {
                     font-size: 1.2rem;
                     text-align: start;
                     text-overflow: ellipsis;
@@ -325,7 +344,8 @@
                     white-space: nowrap;
 
                 }
-                .containerCantidad{
+
+                .containerCantidad {
                     margin: .5rem 3rem;
                     box-shadow: 0 8px 15px rgba(0, 0, 1, 0.1);
                     border-radius: 18px;
@@ -336,7 +356,8 @@
                     padding: 8px;
                     min-width: 80px;
                     max-width: 80px;
-                    button{
+
+                    button {
                         z-index: 1;
                         width: 35%;
                         background-color: rgb(255, 255, 255);
@@ -346,14 +367,17 @@
                         border-radius: 30px;
                         font-size: 1rem;
                         transition: transform 2s ease, box-shadow 0.1s ease;
-                        &:active{
+
+                        &:active {
                             outline: 2px solid brown;
                         }
-                        &:hover{
+
+                        &:hover {
                             outline: 2px solid brown;
                         }
                     }
-                    span{
+
+                    span {
                         font-size: 1rem;
                     }
                 }
@@ -386,4 +410,24 @@
 
 .showCarrito {
     transform: translateX(0);
+}
+
+/*--MEDIA QUERY: TABLET HORIZONTAL--*/
+@media screen and (min-width: 850px) {
+    .containerCarrito .containerCarritoBtnClose {
+        font-size: 2rem;
+    }
+
+    .containerCarrito #textCarritoVacio {
+        position: absolute;
+        top: auto;
+        left: 8rem;
+        bottom: unset;
+    }
+    .containerCarrito h2{
+        padding-bottom: 15px;
+    }
+    .containerMenu{
+        gap: 6rem;
+    }
 }
