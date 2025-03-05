@@ -291,16 +291,14 @@ function mostrarMensajeCarritoVacio() {
 
 const bntContinuar = document.getElementById('step0');
 function cambiarPagina() {
-    bntContinuar.addEventListener('click', function () {
-        window.location.href = "entrega.html"
-    })
+        window.location.href = "entrega.html";
 }
 
 bntContinuar.addEventListener('click', function () {
     const productosGuardados = JSON.parse(localStorage.getItem("producto")) || [];
 
     if (productosGuardados.length > 0) {
-        carrito.lenght = 0;
+        carrito.length = 0;
         carrito.push(productosGuardados);
         cambiarPagina()
     }
