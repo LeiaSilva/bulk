@@ -188,3 +188,50 @@ section {
         }
     }
 }
+
+/*--MEDIA QUERY: CELULAR--*/
+@media screen and (max-width: 650px){
+ .card{
+    flex-direction: column;
+    width: 85%;
+ }
+ .card .cardImg{
+    width: 80%;
+ }
+ .card .cardImg span{
+    left: 35%;
+ }
+ .card .cardContent h2{
+    font-size: 1.8rem;
+ }
+ .card .cardContent h3{
+    font-size: 1rem;
+ }
+ .card .cardContent p{
+    font-size: 1.5rem;
+ }
+ .card .cardContent-btns{
+    gap: 0px;
+}
+.card .cardContent-btns button{
+    flex: .4;
+}
+.card .cardContent-btns .cardContent-btn-opciones{
+    flex: .4;
+    margin: 0;
+}
+section .buscador{
+    width: 95%;
+    margin: 0 5px;
+}
+section .buscador input{
+    padding: 13px;
+    font-size: 1rem;
+}
+section .buscador i{
+    margin: 4%;
+}
+
+
+
+}
