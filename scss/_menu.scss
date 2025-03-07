@@ -440,8 +440,14 @@
         font-size: 1.8rem;
         left: 90%;
     }
+    .containerCarrito{
+        width: 100%;
+    }
+    .containerCarrito .containerCarritoBtnClose{
+        font-size: 1.8rem;
+    }
 
-
-
-
+    .containerCarrito .containerCarritoCards{
+        width: 95%;
+    }
 }
