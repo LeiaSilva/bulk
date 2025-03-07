@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    /*-- DATOS QUE RECUPERA DEL LOCAL STORAGE = DATOS DE ENTREGA , PRODUCTOS Y SUMA TOTAL*/
     const resumenContainer = document.getElementById("containerResumenEntrega");
-
     const deliveryDetails = JSON.parse(localStorage.getItem("deliveryDetails"));
 
     if (deliveryDetails) {
@@ -62,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function actualizarCarrito() {
         localStorage.setItem("producto", JSON.stringify(productosCarrito));
-        location.reload(); // Recarga la página para reflejar los cambios
+        location.reload();
     }
 
     /*-- EVENTOS PARA MODIFICAR PRODUCTOS EN EL RESUMEN --*/
@@ -76,15 +74,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (productosCarrito[index].cantidad > 1) {
                     productosCarrito[index].cantidad -= 1;
                 } else {
-                    productosCarrito.splice(index, 1);
+                    verificarUltimoProducto(index);
+                    return;
                 }
             } else if (event.target.classList.contains("trash")) {
-                productosCarrito.splice(index, 1);
+                verificarUltimoProducto(index);
+                return;
             }
 
             actualizarCarrito();
         }
     });
+
+    function verificarUltimoProducto(index) {
+        if (productosCarrito.length === 1) {
+            Swal.fire({
+                title: "¿Desea cancelar la venta?",
+                text: "Si cancela, se eliminarán todos los datos y volverá al inicio.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Sí, cancelar",
+                cancelButtonText: "No, seguir",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem("producto");
+                    localStorage.removeItem("contadorCarrito");
+                    localStorage.removeItem("deliveryDetails");
+                    localStorage.removeItem('currentStep');
+                    window.location.href = "inicio.html";
+                }
+            });
+        } else {
+            productosCarrito.splice(index, 1);
+            actualizarCarrito();
+        }
+    }
 
     /*-- EVENTO PARA MODIFICAR EL CHECKBOX DE ARMADO --*/
     containerResumenCarrito.addEventListener("change", function (event) {
@@ -94,36 +118,31 @@ document.addEventListener("DOMContentLoaded", function () {
             actualizarCarrito();
         }
     });
+
+    /*-- EVENTO PARA EL BOTÓN FINALIZAR --*/
+    const btnFinalizar = document.getElementById("btnFinalizar");
+
+    if (btnFinalizar) {
+        btnFinalizar.addEventListener("click", function () {
+            Swal.fire({
+                title: "¿Confirmar finalización?",
+                text: "Se eliminarán los datos y volverás al inicio.",
+                icon: "success",
+                showCancelButton: true,
+                confirmButtonText: "Finalizar",
+                cancelButtonText: "Cancelar",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Borrar datos del localStorage
+                    localStorage.removeItem("producto");
+                    localStorage.removeItem("contadorCarrito");
+                    localStorage.removeItem("deliveryDetails");
+                    localStorage.removeItem("currentStep");
+
+                    // Redirigir al inicio
+                    window.location.href = "inicio.html";
+                }
+            });
+        });
+    }
 });
-
-/*-- BLOQUEAR PAGINA DE INICIO */
-window.addEventListener("popstate", function (event) {
-    window.location.href = "inicio.html";
-});
-
-/*-- EVENTO FINALIZAR VENTA --*/
-const btnFinalizar = document.getElementById('btnFinalizar');
-
-if (btnFinalizar) {
-    btnFinalizar.addEventListener('click', function () {
-        const containerCarrito = document.getElementById('containerCarritoCards');
-        if (containerCarrito) containerCarrito.innerHTML = '';
-
-        const contadorCarrito = document.getElementById('contadorCarrito');
-        if (contadorCarrito) {
-            contadorCarrito.textContent = '0';
-            contadorCarrito.classList.add('oculto');
-        }
-
-        localStorage.removeItem('producto');
-        localStorage.removeItem('contadorCarrito');
-        localStorage.removeItem('deliveryDetails');
-
-        window.location.href = "inicio.html";
-    });
-} else {
-    console.error("No se encontró el botón Finalizar.");
-}
-
-
-

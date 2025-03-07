@@ -593,6 +593,7 @@
   transition: opacity 0.3s ease;
 }
 
+/*--MEDIA QUERY: TABLET HORIZONTAL--*/
 @media screen and (min-width: 850px) {
   .loginContainer {
     margin: 8rem 4.5rem;
@@ -624,6 +625,7 @@
     font-size: 1.5rem;
   }
 }
+/*--MEDIA QUERY: CELULAR--*/
 @media screen and (max-width: 650px) {
   .loginContainer {
     margin: 6rem 2.5rem;
