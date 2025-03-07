@@ -431,3 +431,17 @@
         gap: 6rem;
     }
 }
+@media screen and (max-width: 650px){
+    .containerMenu{
+        width: 100%;
+        gap: 8rem;
+    }
+    .containerMenu .containerMenuPerfilClose{
+        font-size: 1.8rem;
+        left: 90%;
+    }
+
+
+
+
+}
