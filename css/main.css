@@ -1135,6 +1135,9 @@
   .containerCarrito .containerCarritoCards {
     width: 95%;
   }
+  .containerCarrito #textCarritoVacio {
+    bottom: 22rem;
+  }
 }
 main {
   margin-top: 80px;
